@@ -1,1 +1,332 @@
 == ES6 ==
+
+=== LESSONS from es6.io by Wes Bos ===
+
+  - [[#Basics|Basics]]
+  - [[#09 - Default Function Arguments|09 - Default Function Arguments]]
+  - [[#12 - Template Strings Introduction|12 - Template Strings Introduction]]
+  - [[#13 - Creating HTML Fragments with template strings literals|13 - Creating HTML Fragments with template strings literals]]
+  - [[#14 - Tagged Template literals|14 - Tagged Template literals]]
+  - [[#17 - New string methods|17 - New string methods]]
+  - [[#18 - Destructuring objects|18 - Destructuring objects]]
+  - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
+  - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
+  - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
+  - [[#20 - Swapping variables with Destructuring|20 - Swapping variables with Destructuring]]
+  - [[#21 - Destructuring Functions - Multiple returns and named defaults|21 - Destructuring Functions - Multiple returns and named defaults]]
+  - [[#22 - The for of loop|22 - The for of loop]]
+  - [[#23 - The for of loop in action|23 - The for of loop in action]]
+  - [[#25 - Array.from() and Array.of()|25 - Array.from() and Array.of()]]
+  - [[#26 - Array.find() and Array.findIndex()|26 - Array.find() and Array.findIndex()]]
+  - [[#27 - Array.some() and Array.every()|27 - Array.some() and Array.every()]]
+  - [[#28 - Spread Operator Introduction|28 - Spread Operator Introduction]]
+  - [[#29 - Spread exercise|29 - Spread exercise]]
+  - [[#30 - More Spread exemples|30 - More Spread exemples]]
+  - [[#31 - Spreading into a function|31 - Spreading into a function]]
+  - [[#33 - Object Literal Upgrades|33 - Object Literal Upgrades]]
+  - [[#34 - Promises|34 - Promises]]
+  - [[#35 - Building your own Promises|35 - Building your own Promises]]
+  - [[#filter and reduce|filter and reduce]]
+
+===== Basics =====
+{{{class="javascript"
+  const constVariableg = "string"; // can only be defined once. Global.
+  let letVariable = "string"; // can only be defined once, throws an error otherwise. Scoped.
+  var varVariable = "string"; // can be redefined at will.
+}}}
+
+===== 09 - Default Function Arguments =====
+Put default arguments and pass undefined as argument
+{{{class="javascript"
+    function becomeBetter(goal, average = 50, effort = 200) {...
+    };
+    becomeBetter(100, undefined, 50);
+}}}
+
+===== 12 - Template Strings Introduction =====
+Template literals
+{{{class="javascript"
+    var backticks = `My name is ${github}`;
+}}}
+
+===== 13 - Creating HTML Fragments with template strings literals =====
+{{{class="javascript"
+  const developer = {
+    name: "Cool Guy",
+    age: 123,
+    fun: true
+  };
+
+  const longString = `
+    <div class="long">
+      <span>${developer.name}</span>
+      <p>${developer.age}</p>
+    </div>
+  `;
+
+  const people = [
+    {name: "Mike", age: 23},
+    {name: "John", age: 43}
+  ];
+
+  const team = `
+    <ul>
+      ${people.map(person => `
+          <li>${person.name} is ${person.age}</li>
+        `).join("")}
+    </ul>
+  `;
+}}}
+
+===== 14 - Tagged Template literals =====
+{{{class="javascript"
+  // strings ==  array of 'bio' substrings
+  // ...values == array of variables name and age
+  function wrapContent(strings, ...values) {
+    let str = '';
+    strings.forEach((string, i) => {
+      str += `${string} <strong>${(values[i] || '')}</strong>`;
+    });
+    return str
+  };
+
+  const name = "Johnny";
+  const age = 52;
+  const bio = wrapContent`The dude's name is ${name}; he's ${age}`;
+}}}
+
+===== 17 - New string methods =====
+{{{class="javascript"
+  let abc = "ABC"
+  // .startsWith()
+    abc.startsWith("A"); // true
+    abc.startsWith("B", 1); // true
+  // .endsWith()
+    abc.endsWith("C"); // true
+  // .includes()
+    abc.includes("AB"); // true
+  // .repeat()
+    abc.repeat(2); // "ABCABC"
+}}}
+
+===== 18 - Destructuring objects =====
+{{{class="javascript"
+  const france = {
+    continent: "Europe",
+    language: "French",
+    sites: {
+      castle: "Versailles"
+    }
+  };
+  const { continent, language:lang } = france;
+  const { castle } = france.sites;
+  // yields `const castle`, `const continent` and `const lang`
+  const settings = { width: 300, color: 'black' };  // height, fontSize
+  const { width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
+  const { w: width = 500, h: height = 800 } = { w: 600 };
+}}}
+
+===== 19 - Destructuring arrays =====
+{{{class="javascript"
+  const france = ["french", 60000000, "Europe", "Sarkozy", "Hollande", "Pompidou"];
+  // const france = "french,60000000,Europe";
+  const [language, population, continent, ...presidents] = france;
+}}}
+
+===== 20 - Swapping variables with Destructuring =====
+{{{class="javascript"
+  let first = "first";
+  let second = "second";
+  [first, second] = [second, first];
+}}}
+
+===== 21 - Destructuring Functions - Multiple returns and named defaults =====
+{{{class="javascript"
+  function convertCurrency(amount) {
+    const converted = {
+      USD: amount * 10,
+      GBP: amount * 5,
+      EUR: amount * 8
+    };
+    return converted;
+  };
+  const { USD, EUR } = convertCurrency(123);
+}}}
+
+===== 22 - The for of loop =====
+{{{class="javascript"
+  // for OF yields the value, while IN yields the index
+  const devs = ["john", "joe"];
+  for (const dev of devs) {
+    console.log(dev)
+  }; // -> "john", "joe"
+}}}
+
+===== 23 - The for of loop in action =====
+{{{class="javascript"
+  // `.entries` creates an iterable "array prototype"
+    for (const [index, name] of devs.entries()) {
+      console.log(`${name} is at index ${index}`)
+    };
+  // Read the arguments passed to the function
+    function unkownArgumentsAmount() {
+      console.log(arguments)
+    };
+}}}
+
+===== 25 - Array.from() and Array.of() =====
+Takes something array-ish and makes it a true array
+You can apply a map immediately in the second argument
+{{{class="javascript"
+  const ps = document.querySelectorAll("p .exemple")
+  const arrDivs = Array.from(ps, exemple => {
+    return exemple.textContent;
+  });
+}}}
+Array.of() makes an array with the arguments passed to it
+
+
+===== 26 - Array.find() and Array.findIndex() =====
+.find()
+{{{class="javascript"
+    const group = [{"id": "1", "name": "me"}, {"id": "2", "name": "you"}];
+    const person = posts.find(person => person.name === "you");
+    // Object {id: "2", name: "you"}
+.findIndex()
+{{{class="javascript"
+    const personIndex = posts.findIndex(person => person.name === "you");
+    // 1
+}}}
+
+===== 27 - Array.some() and Array.every() =====
+Array.some() returns true if condition is met in array
+Array.every() returns true ONLY if condition is met on every item
+{{{class="javascript"
+  const ages = Array.from(19, 21, 32, 25, 59);
+  const oldEnough = ages.every(age => age >= 21); // false
+  const leaderInGroup = ages.some(age => age >= 21); // true
+}}}
+
+===== 28 - Spread Operator Introduction =====
+{{{class="javascript"
+  const people = ["John", "Mary", "Jack"];
+  const twins = ["John", "Mary", "Jack"];
+  const everybody = [...people, ...twins];
+  // Duplicate an array
+  const newEverybody = [...everybody];
+}}}
+
+===== 29 - Spread exercise =====
+{{{class="javascript"
+  const heading = document.querySelector('.jump');
+  heading.innerHTML = sparanWrap(heading.textContent);
+  function sparanWrap(word) {
+    return [...word].map(letter => `<span>${letter}</span>`).join('');
+  };
+}}}
+
+===== 30 - More Spread exemples =====
+{{{class="javascript"
+  const comments = [
+    {id: 1, content: "Hey"},
+    {id: 2, content: "Bonjour"},
+    {id: 3, content: "Hola"},
+  ];
+  const whereFrance = comments.findIndex(comment => comment.content === "Bonjour");
+  const noFrance = [...comments.slice(0, whereFrance), ...comments.slice(whereFrance + 1)];
+  console.log(noFrance)
+}}}
+
+===== 31 - Spreading into a function =====
+{{{class="javascript"
+  const people = ["John", "Mary", "Jack"];
+  const singer = ["Sinatra", "Goodnight Irene"];
+  twins.push(...people);
+  function singer(singerName, song) {
+    console.log(`${singerName} sang ${song}`);
+  };
+  singer(...twins)
+}}}
+
+===== 33 - Object Literal Upgrades =====
+You can populate an object with variables without specifying their key names
+{{{class="javascript"
+    const firstName = "John";
+    const lastName = "Doe";
+    const person = { firstName, lastName } // Object {firstName: "John", lastName: "Doe"}
+  // functions in Object
+    const modal = {
+      create(selector) {
+        // use this
+      },
+      create: function(selector) {
+        // instead of this
+      }
+    };
+
+  // create keys on the fly
+    const total = {
+      [lastName]: lastName,
+      [`${lastName}Classy`]: `de ${lastName}`
+    };
+
+  // 'zip' two arrays
+    const firstSinger = ["Frank", "Mark"];
+    const lastSinger = ["Sinatra", "Knopfler"];
+    const singer = {
+      [firstSinger.shift()]: lastSinger.shift(),
+      [firstSinger.shift()]: lastSinger.shift(),
+    }
+}}}
+
+===== 34 - Promises =====
+{{{class="javascript"
+  const posts = fetch("http://some.api/url/get/items");
+  posts.then(data => data.json)
+       .then(data => { console.log(data) })
+       .catch((err) => { console.log(err) })
+}}}
+
+===== 35 - Building your own Promises =====
+{{{class="javascript"
+  const p = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      reject(Error("This error is wrapped in an error Object"));
+    }, 1000);
+  });
+  p.then("Hey").catch((error) => console.log(error));
+}}}
+
+===== filter and reduce =====
+{{{class="javascript"
+  const numbers = [3, 62, 234, 7, 23, 74, 23, 76, 92];
+  const result = numbers.filter(number => number >= 70)
+    .reduce((a, b) => {
+      return a + b
+    }, 0);
+
+// Refactor functions to arrow functions
+  const names = ['wes', 'kait', 'lux'];
+
+  const fullNames = names.map(function(name) {
+    return `${name} bos`;
+  });
+
+  const fullNames2 = names.map((name) => {
+    return `${name} bos`;
+  });
+
+  const fullNames3 = names.map(name => {
+    return `${name} bos`;
+  });
+
+  const fullNames4 = names.map(name => `${name} bos`);
+
+  const fullNames5 = names.map(() => `cool bos`);
+
+  const sayMyName = (name) => {
+    alert(`Hello ${name}!`)
+  }
+
+  sayMyName('Wes');
+}}}
