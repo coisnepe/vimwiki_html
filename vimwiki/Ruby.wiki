@@ -6,14 +6,14 @@
 
 ==== Array ====
 {{{class="ruby"
-# Reject items
+# reject values
   ["", "1", "2"].reject(&:empty?)
 
-# Select items
-  [0, 1, 2].select { |item| item >= 1 }
+# Select values
+  [0, 1, 2].select { |value| value >= 1 }
 
-# Check items against condition
-  [1, 2, 3].any? { |item| item > 1 }
+# Check values against condition
+  [1, 2, 3].any? { |value| value > 1 }
 }}}
 
 ==== Goodies ====
