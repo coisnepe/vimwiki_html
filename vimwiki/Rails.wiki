@@ -24,7 +24,7 @@ Boot up the server on 192.168.1.23:3003
 
 ==== Console ====
 Execute raw SQL on the db
-{{{ruby
+{{{class="ruby"
   conn = ActiveRecord::Base.connection
   conn.execute("SELECT * FROM users")
 }}}
