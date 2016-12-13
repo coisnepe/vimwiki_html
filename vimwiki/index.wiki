@@ -13,5 +13,3 @@
 	* [[Git]]
 	* [[SQL]]
 	* [[VimWiki]]
-
-test
