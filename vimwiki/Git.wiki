@@ -1,5 +1,10 @@
 == Git ==
 
+{{{
+# Rename the current branch
+  git branch -m <newname>
+}}}
+
 === stash ===
 {{{
   git stash list
