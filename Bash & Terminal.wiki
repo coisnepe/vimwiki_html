@@ -1,0 +1,36 @@
+== Bash & Terminal commands ==
+
+Chain commands
+{{{
+  ls -al | grep "file_name"
+}}}
+
+=== xargs ===
+Use the output of one command as arguments for the next
+{{{
+# Find ruby files in app/ that contain the string user.
+#   In the files matched, look for the string "transaction"
+  grep "users" -lr app/**/*.rb | xargs grep "transaction"
+}}}
+
+=== wc ===
+Count words, lines, characters, etc... in a file
+{{{
+  wc -[w | l | c] your_file.csv
+}}}
+
+=== grep ===
+Search one file 
+{{{
+  grep "redmine" /etc/hosts
+}}}
+
+Flags
+{{{
+  -r # search recursively
+  -n # display the line number
+  -l # only output filenames of matched files
+  -B 10 # display 10 lines before the line containing the match
+  -A 10 # display 10 lines after the line containing the match
+  -C 10 # display 10 lines before and after the line containing the match
+}}}

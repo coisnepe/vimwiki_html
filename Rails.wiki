@@ -1,0 +1,38 @@
+== Ruby on Rails ==
+- [[#String|String]]
+- [[#Rake|Rake]]
+
+==== String ====
+{{{class="ruby"
+# `strip` on steroids: remove extra whitespaces around and within a string
+>  "    The amount   of whitespace    is too    damn high     ".squish
+}}}
+
+==== Rake commands ====
+{{{
+List rake tasks
+$ rake -T
+
+Inventory of TODO, FIXME, OPTIMIZE, etc... comments in the project
+$ rake notes  
+}}}
+
+Boot up the server on 192.168.1.23:3003
+{{{
+  rails s -p 3003 -b 192.168.1.23
+}}}
+
+==== Console ====
+Execute raw SQL on the db
+{{{class="ruby"
+  conn = ActiveRecord::Base.connection
+  conn.execute("SELECT * FROM users")
+}}}
+
+Require a gem that's installed on the system, but not present in the Gemfile
+{{{class="code"
+> gem which awesome_print
+ ~> '/usr/local/lib/ruby/gems/1.9.1/gems/awesome_print-1.7.0/lib/awesome_print.rb'
+> $: << '/usr/local/lib/ruby/gems/1.9.1/gems/awesome_print-1.7.0/lib'
+> require "awesome_print"
+}}}
