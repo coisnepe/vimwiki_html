@@ -10,8 +10,6 @@
   - [[#17 - New string methods|17 - New string methods]]
   - [[#18 - Destructuring objects|18 - Destructuring objects]]
   - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
-  - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
-  - [[#19 - Destructuring arrays|19 - Destructuring arrays]]
   - [[#20 - Swapping variables with Destructuring|20 - Swapping variables with Destructuring]]
   - [[#21 - Destructuring Functions - Multiple returns and named defaults|21 - Destructuring Functions - Multiple returns and named defaults]]
   - [[#22 - The for of loop|22 - The for of loop]]
