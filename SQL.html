@@ -3,6 +3,17 @@
     <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
     <title>SQL</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>
+      window.onload = function() {
+        var allPre, i, j;
+        allPre = document.getElementsByTagName("pre");
+        for (i = 0, j = allPre.length; i < j; i++) {
+          hljs.highlightBlock(allPre[i]);
+        }
+      };
+    </script>
 </head>
 <body>
     <a href="index.html">Index</a>

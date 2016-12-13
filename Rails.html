@@ -3,6 +3,17 @@
     <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
     <title>Rails</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>
+      window.onload = function() {
+        var allPre, i, j;
+        allPre = document.getElementsByTagName("pre");
+        for (i = 0, j = allPre.length; i < j; i++) {
+          hljs.highlightBlock(allPre[i]);
+        }
+      };
+    </script>
 </head>
 <body>
     <a href="index.html">Index</a>
@@ -12,6 +23,28 @@
         <div class="col-md-12">
           
 <div id="Ruby on Rails"><h2 id="Ruby on Rails">Ruby on Rails</h2></div>
+
+<div id="Ruby on Rails-String"><h4 id="String">String</h4></div>
+<pre ruby>
+# `strip` on steroids: remove extra whitespaces around and within a string
+&gt;  "    The amount   of whitespace    is too    damn high     ".squish
+</pre>
+
+<div id="Ruby on Rails-Rake commands"><h4 id="Rake commands">Rake commands</h4></div>
+<pre>
+List rake tasks
+$ rake -T
+
+Inventory of TODO, FIXME, OPTIMIZE, etc... comments in the project
+$ rake notes  
+</pre>
+
+<p>
+Boot up the server on 192.168.1.23:3003
+</p>
+<pre>
+  rails s -p 3003 -b 192.168.1.23
+</pre>
 
 <p>
 While in the rails console, require a gem that's installed on the system, but not present in the Gemfile

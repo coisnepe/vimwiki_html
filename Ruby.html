@@ -3,6 +3,17 @@
     <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
     <title>Ruby</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
+    <script>
+      window.onload = function() {
+        var allPre, i, j;
+        allPre = document.getElementsByTagName("pre");
+        for (i = 0, j = allPre.length; i < j; i++) {
+          hljs.highlightBlock(allPre[i]);
+        }
+      };
+    </script>
 </head>
 <body>
     <a href="index.html">Index</a>
@@ -15,16 +26,22 @@
 
 <div id="Ruby-Core library"><h3 id="Core library">Core library</h3></div>
 
-<div id="Ruby-Core library-String"><h4 id="String">String</h4></div>
-<pre ruby>
-# `strip` on steroids: remove extra whitespaces around and within a string
-&gt;  "    The amount   of whitespace    is too    damn high     ".squish
+<div id="Ruby-Core library-Array"><h4 id="Array">Array</h4></div>
+<pre class="ruby">
+# Reject items
+  ["", "1", "2"].reject(&amp;:empty?)
+
+# Select items
+  [0, 1, 2].select { |item| item &gt;= 1 }
+
+# Check items against condition
+  [1, 2, 3].any? { |item| item &gt; 1 }
 </pre>
 
 <div id="Ruby-Core library-Goodies"><h4 id="Goodies">Goodies</h4></div>
 
 <div id="Ruby-Core library-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
-<pre ruby>
+<pre class="ruby">
 require "benchmark"
 
 puts Benchmark.measure { "something".capitalize }
