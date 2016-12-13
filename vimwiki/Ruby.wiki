@@ -1,0 +1,34 @@
+== Ruby ==
+- [[#Array|Array]]
+- [[#Benchmark|Benchmark]]
+
+=== Core library ===
+
+==== Array ====
+{{{class="ruby"
+# Reject items
+  ["", "1", "2"].reject(&:empty?)
+
+# Select items
+  [0, 1, 2].select { |item| item >= 1 }
+
+# Check items against condition
+  [1, 2, 3].any? { |item| item > 1 }
+}}}
+
+==== Goodies ====
+
+===== Benchmark =====
+{{{class="ruby"
+require "benchmark"
+
+puts Benchmark.measure { "something".capitalize }
+
+Benchmark.bm do |bm|
+  bm.report "message here" do
+    1_000.times do
+      "something".capitalize
+    end
+  end
+end
+}}}

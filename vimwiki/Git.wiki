@@ -1,0 +1,14 @@
+== Git ==
+
+=== stash ===
+{{{
+  git stash list
+  git stash pop [-u]
+  git stash drop stash{0}
+}}}
+
+=== previous commits ===
+Gather 2 commits into one
+{{{
+  git rebase -i HEAD~2
+}}}

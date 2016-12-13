@@ -1,0 +1,24 @@
+== Bash & Terminal commands ==
+
+Chain commands
+{{{
+  ls -al | grep "file_name"
+}}}
+
+=== wc ===
+Count words, lines, characters, etc... in a file
+{{{
+  wc -[w | l | c] your_file.csv
+}}}
+
+=== grep ===
+Search for a string and display X lines before, after, or around X
+{{{
+  grep -[B | A | C] "some string"
+}}}
+
+Search one file, or recursively through a folder
+{{{
+  grep "redmine" /etc/hosts
+  grep "something" -r /home/user/Downloads
+}}}
