@@ -1,11 +1,15 @@
 == Vimwiki Help==
 Some basics to get around Vimwiki
 
+<br/>
+
 === Basic commands ===
 * :VimwikiIndex
 * :VimwikiAll2HTML
 * :VimwikiGoto Ruby
 * :h vimwiki
+
+<br/>
 
 === Links ===
 - [[http://vimwiki.github.io/]]

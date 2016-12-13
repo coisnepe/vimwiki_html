@@ -1,16 +1,21 @@
 == Git ==
 
+Rename the current branch
 {{{
-# Rename the current branch
   git branch -m <newname>
 }}}
 
+<br/>
+
 === stash ===
+Easily switch between branches by "stashing" current changes instead of committing them.
 {{{
   git stash list
   git stash pop [-u]
   git stash drop stash{0}
 }}}
+
+<br/>
 
 === previous commits ===
 Gather 2 commits into one

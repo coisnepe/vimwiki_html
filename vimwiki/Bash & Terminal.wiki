@@ -5,6 +5,8 @@ Chain commands
   ls -al | grep "file_name"
 }}}
 
+<br/>
+
 === xargs ===
 Use the output of one command as arguments for the next
 {{{
@@ -13,14 +15,18 @@ Use the output of one command as arguments for the next
   grep "users" -lr app/**/*.rb | xargs grep "transaction"
 }}}
 
+<br/>
+
 === wc ===
 Count words, lines, characters, etc... in a file
 {{{
   wc -[w | l | c] your_file.csv
 }}}
 
+<br/>
+
 === grep ===
-Search one file 
+Search one file
 {{{
   grep "redmine" /etc/hosts
 }}}

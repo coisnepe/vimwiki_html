@@ -2,6 +2,8 @@
 - [[#Array|Array]]
 - [[#Benchmark|Benchmark]]
 
+<br/>
+
 === Core library ===
 
 ==== Array ====
@@ -19,7 +21,12 @@
   %w(one two three).sample
 }}}
 
+<br/>
+
+
 ==== Goodies ====
+
+<br/>
 
 ===== Benchmark =====
 {{{class="ruby"
