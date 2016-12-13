@@ -26,6 +26,11 @@
 
 ==== Goodies ====
 
+{{{class="ruby"
+# Execute unix commands. Returns a string
+`wc -l line_count.csv`
+}}}
+
 <br/>
 
 ===== Benchmark =====
