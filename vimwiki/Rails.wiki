@@ -22,7 +22,14 @@ Boot up the server on 192.168.1.23:3003
   rails s -p 3003 -b 192.168.1.23
 }}}
 
-While in the rails console, require a gem that's installed on the system, but not present in the Gemfile
+==== Console ====
+Execute raw SQL on the db
+{{{ruby
+  conn = ActiveRecord::Base.connection
+  conn.execute("SELECT * FROM users")
+}}}
+
+Require a gem that's installed on the system, but not present in the Gemfile
 {{{class="code"
 > gem which awesome_print
  ~> '/usr/local/lib/ruby/gems/1.9.1/gems/awesome_print-1.7.0/lib/awesome_print.rb'
