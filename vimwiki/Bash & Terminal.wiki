@@ -12,9 +12,9 @@ Count words, lines, characters, etc... in a file
 }}}
 
 === grep ===
-Search for a string and display X lines before, after, or around X
+Search for a string and display X lines before, after, or around the matches
 {{{
-  grep -[B | A | C] "some string"
+  grep -[B | A | C] X "some string"
 }}}
 
 Search one file, or recursively through a folder
