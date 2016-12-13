@@ -27,7 +27,7 @@
 ==== Goodies ====
 
 {{{class="ruby"
-# Execute unix commands. Returns a string
+# Execute unix commands using backticks `. Returns a string
 `wc -l line_count.csv`
 }}}
 
