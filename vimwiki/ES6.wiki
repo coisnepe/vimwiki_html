@@ -26,12 +26,16 @@
   - [[#35 - Building your own Promises|35 - Building your own Promises]]
   - [[#filter and reduce|filter and reduce]]
 
+<br/>
+
 ===== Basics =====
 {{{class="javascript"
   const constVariableg = "string"; // can only be defined once. Global.
   let letVariable = "string"; // can only be defined once, throws an error otherwise. Scoped.
   var varVariable = "string"; // can be redefined at will.
 }}}
+
+<br/>
 
 ===== 09 - Default Function Arguments =====
 Put default arguments and pass undefined as argument
@@ -41,11 +45,15 @@ Put default arguments and pass undefined as argument
     becomeBetter(100, undefined, 50);
 }}}
 
+<br/>
+
 ===== 12 - Template Strings Introduction =====
 Template literals
 {{{class="javascript"
     var backticks = `My name is ${github}`;
 }}}
+
+<br/>
 
 ===== 13 - Creating HTML Fragments with template strings literals =====
 {{{class="javascript"
@@ -76,6 +84,8 @@ Template literals
   `;
 }}}
 
+<br/>
+
 ===== 14 - Tagged Template literals =====
 {{{class="javascript"
   // strings ==  array of 'bio' substrings
@@ -93,6 +103,8 @@ Template literals
   const bio = wrapContent`The dude's name is ${name}; he's ${age}`;
 }}}
 
+<br/>
+
 ===== 17 - New string methods =====
 {{{class="javascript"
   let abc = "ABC"
@@ -106,6 +118,8 @@ Template literals
   // .repeat()
     abc.repeat(2); // "ABCABC"
 }}}
+
+<br/>
 
 ===== 18 - Destructuring objects =====
 {{{class="javascript"
@@ -124,6 +138,8 @@ Template literals
   const { w: width = 500, h: height = 800 } = { w: 600 };
 }}}
 
+<br/>
+
 ===== 19 - Destructuring arrays =====
 {{{class="javascript"
   const france = ["french", 60000000, "Europe", "Sarkozy", "Hollande", "Pompidou"];
@@ -131,12 +147,16 @@ Template literals
   const [language, population, continent, ...presidents] = france;
 }}}
 
+<br/>
+
 ===== 20 - Swapping variables with Destructuring =====
 {{{class="javascript"
   let first = "first";
   let second = "second";
   [first, second] = [second, first];
 }}}
+
+<br/>
 
 ===== 21 - Destructuring Functions - Multiple returns and named defaults =====
 {{{class="javascript"
@@ -151,6 +171,8 @@ Template literals
   const { USD, EUR } = convertCurrency(123);
 }}}
 
+<br/>
+
 ===== 22 - The for of loop =====
 {{{class="javascript"
   // for OF yields the value, while IN yields the index
@@ -159,6 +181,8 @@ Template literals
     console.log(dev)
   }; // -> "john", "joe"
 }}}
+
+<br/>
 
 ===== 23 - The for of loop in action =====
 {{{class="javascript"
@@ -172,6 +196,8 @@ Template literals
     };
 }}}
 
+<br/>
+
 ===== 25 - Array.from() and Array.of() =====
 Takes something array-ish and makes it a true array
 You can apply a map immediately in the second argument
@@ -183,6 +209,8 @@ You can apply a map immediately in the second argument
 }}}
 Array.of() makes an array with the arguments passed to it
 
+
+<br/>
 
 ===== 26 - Array.find() and Array.findIndex() =====
 .find()
@@ -196,6 +224,8 @@ Array.of() makes an array with the arguments passed to it
     // 1
 }}}
 
+<br/>
+
 ===== 27 - Array.some() and Array.every() =====
 Array.some() returns true if condition is met in array
 Array.every() returns true ONLY if condition is met on every item
@@ -204,6 +234,8 @@ Array.every() returns true ONLY if condition is met on every item
   const oldEnough = ages.every(age => age >= 21); // false
   const leaderInGroup = ages.some(age => age >= 21); // true
 }}}
+
+<br/>
 
 ===== 28 - Spread Operator Introduction =====
 {{{class="javascript"
@@ -214,6 +246,8 @@ Array.every() returns true ONLY if condition is met on every item
   const newEverybody = [...everybody];
 }}}
 
+<br/>
+
 ===== 29 - Spread exercise =====
 {{{class="javascript"
   const heading = document.querySelector('.jump');
@@ -222,6 +256,8 @@ Array.every() returns true ONLY if condition is met on every item
     return [...word].map(letter => `<span>${letter}</span>`).join('');
   };
 }}}
+
+<br/>
 
 ===== 30 - More Spread exemples =====
 {{{class="javascript"
@@ -235,6 +271,8 @@ Array.every() returns true ONLY if condition is met on every item
   console.log(noFrance)
 }}}
 
+<br/>
+
 ===== 31 - Spreading into a function =====
 {{{class="javascript"
   const people = ["John", "Mary", "Jack"];
@@ -245,6 +283,8 @@ Array.every() returns true ONLY if condition is met on every item
   };
   singer(...twins)
 }}}
+
+<br/>
 
 ===== 33 - Object Literal Upgrades =====
 You can populate an object with variables without specifying their key names
@@ -277,6 +317,8 @@ You can populate an object with variables without specifying their key names
     }
 }}}
 
+<br/>
+
 ===== 34 - Promises =====
 {{{class="javascript"
   const posts = fetch("http://some.api/url/get/items");
@@ -284,6 +326,8 @@ You can populate an object with variables without specifying their key names
        .then(data => { console.log(data) })
        .catch((err) => { console.log(err) })
 }}}
+
+<br/>
 
 ===== 35 - Building your own Promises =====
 {{{class="javascript"
@@ -294,6 +338,8 @@ You can populate an object with variables without specifying their key names
   });
   p.then("Hey").catch((error) => console.log(error));
 }}}
+
+<br/>
 
 ===== filter and reduce =====
 {{{class="javascript"

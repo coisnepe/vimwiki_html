@@ -101,12 +101,20 @@
 
 </ul>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-Basics"><h5 id="Basics">Basics</h5></div>
 <pre class="javascript">
   const constVariableg = "string"; // can only be defined once. Global.
   let letVariable = "string"; // can only be defined once, throws an error otherwise. Scoped.
   var varVariable = "string"; // can be redefined at will.
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-09 - Default Function Arguments"><h5 id="09 - Default Function Arguments">09 - Default Function Arguments</h5></div>
 <p>
@@ -118,6 +126,10 @@ Put default arguments and pass undefined as argument
     becomeBetter(100, undefined, 50);
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-12 - Template Strings Introduction"><h5 id="12 - Template Strings Introduction">12 - Template Strings Introduction</h5></div>
 <p>
 Template literals
@@ -125,6 +137,10 @@ Template literals
 <pre class="javascript">
     var backticks = `My name is ${github}`;
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-13 - Creating HTML Fragments with template strings literals"><h5 id="13 - Creating HTML Fragments with template strings literals">13 - Creating HTML Fragments with template strings literals</h5></div>
 <pre class="javascript">
@@ -155,6 +171,10 @@ Template literals
   `;
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-14 - Tagged Template literals"><h5 id="14 - Tagged Template literals">14 - Tagged Template literals</h5></div>
 <pre class="javascript">
   // strings ==  array of 'bio' substrings
@@ -172,6 +192,10 @@ Template literals
   const bio = wrapContent`The dude's name is ${name}; he's ${age}`;
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-17 - New string methods"><h5 id="17 - New string methods">17 - New string methods</h5></div>
 <pre class="javascript">
   let abc = "ABC"
@@ -185,6 +209,10 @@ Template literals
   // .repeat()
     abc.repeat(2); // "ABCABC"
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-18 - Destructuring objects"><h5 id="18 - Destructuring objects">18 - Destructuring objects</h5></div>
 <pre class="javascript">
@@ -203,6 +231,10 @@ Template literals
   const { w: width = 500, h: height = 800 } = { w: 600 };
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-19 - Destructuring arrays"><h5 id="19 - Destructuring arrays">19 - Destructuring arrays</h5></div>
 <pre class="javascript">
   const france = ["french", 60000000, "Europe", "Sarkozy", "Hollande", "Pompidou"];
@@ -210,12 +242,20 @@ Template literals
   const [language, population, continent, ...presidents] = france;
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-20 - Swapping variables with Destructuring"><h5 id="20 - Swapping variables with Destructuring">20 - Swapping variables with Destructuring</h5></div>
 <pre class="javascript">
   let first = "first";
   let second = "second";
   [first, second] = [second, first];
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-21 - Destructuring Functions - Multiple returns and named defaults"><h5 id="21 - Destructuring Functions - Multiple returns and named defaults">21 - Destructuring Functions - Multiple returns and named defaults</h5></div>
 <pre class="javascript">
@@ -230,6 +270,10 @@ Template literals
   const { USD, EUR } = convertCurrency(123);
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-22 - The for of loop"><h5 id="22 - The for of loop">22 - The for of loop</h5></div>
 <pre class="javascript">
   // for OF yields the value, while IN yields the index
@@ -238,6 +282,10 @@ Template literals
     console.log(dev)
   }; // -&gt; "john", "joe"
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-23 - The for of loop in action"><h5 id="23 - The for of loop in action">23 - The for of loop in action</h5></div>
 <pre class="javascript">
@@ -250,6 +298,10 @@ Template literals
       console.log(arguments)
     };
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-25 - Array.from() and Array.of()"><h5 id="25 - Array.from() and Array.of()">25 - Array.from() and Array.of()</h5></div>
 <p>
@@ -267,6 +319,10 @@ Array.of() makes an array with the arguments passed to it
 </p>
 
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-26 - Array.find() and Array.findIndex()"><h5 id="26 - Array.find() and Array.findIndex()">26 - Array.find() and Array.findIndex()</h5></div>
 <p>
 .find()
@@ -281,6 +337,10 @@ Array.of() makes an array with the arguments passed to it
     // 1
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-27 - Array.some() and Array.every()"><h5 id="27 - Array.some() and Array.every()">27 - Array.some() and Array.every()</h5></div>
 <p>
 Array.some() returns true if condition is met in array
@@ -292,6 +352,10 @@ Array.every() returns true ONLY if condition is met on every item
   const leaderInGroup = ages.some(age =&gt; age &gt;= 21); // true
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-28 - Spread Operator Introduction"><h5 id="28 - Spread Operator Introduction">28 - Spread Operator Introduction</h5></div>
 <pre class="javascript">
   const people = ["John", "Mary", "Jack"];
@@ -301,6 +365,10 @@ Array.every() returns true ONLY if condition is met on every item
   const newEverybody = [...everybody];
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-29 - Spread exercise"><h5 id="29 - Spread exercise">29 - Spread exercise</h5></div>
 <pre class="javascript">
   const heading = document.querySelector('.jump');
@@ -309,6 +377,10 @@ Array.every() returns true ONLY if condition is met on every item
     return [...word].map(letter =&gt; `&lt;span&gt;${letter}&lt;/span&gt;`).join('');
   };
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-30 - More Spread exemples"><h5 id="30 - More Spread exemples">30 - More Spread exemples</h5></div>
 <pre class="javascript">
@@ -322,6 +394,10 @@ Array.every() returns true ONLY if condition is met on every item
   console.log(noFrance)
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-31 - Spreading into a function"><h5 id="31 - Spreading into a function">31 - Spreading into a function</h5></div>
 <pre class="javascript">
   const people = ["John", "Mary", "Jack"];
@@ -332,6 +408,10 @@ Array.every() returns true ONLY if condition is met on every item
   };
   singer(...twins)
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-33 - Object Literal Upgrades"><h5 id="33 - Object Literal Upgrades">33 - Object Literal Upgrades</h5></div>
 <p>
@@ -366,6 +446,10 @@ You can populate an object with variables without specifying their key names
     }
 </pre>
 
+<p>
+<br/>
+</p>
+
 <div id="ES6-LESSONS from es6.io by Wes Bos-34 - Promises"><h5 id="34 - Promises">34 - Promises</h5></div>
 <pre class="javascript">
   const posts = fetch("http://some.api/url/get/items");
@@ -373,6 +457,10 @@ You can populate an object with variables without specifying their key names
        .then(data =&gt; { console.log(data) })
        .catch((err) =&gt; { console.log(err) })
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-35 - Building your own Promises"><h5 id="35 - Building your own Promises">35 - Building your own Promises</h5></div>
 <pre class="javascript">
@@ -383,6 +471,10 @@ You can populate an object with variables without specifying their key names
   });
   p.then("Hey").catch((error) =&gt; console.log(error));
 </pre>
+
+<p>
+<br/>
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-filter and reduce"><h5 id="filter and reduce">filter and reduce</h5></div>
 <pre class="javascript">

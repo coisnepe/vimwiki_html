@@ -4,11 +4,15 @@
 - [[#Rake commands|Rake commands]]
 - [[#Console|Console]]
 
+<br/>
+
 ==== String ====
 {{{class="ruby"
 # `strip` on steroids: remove extra whitespaces around and within a string
 >  "    The amount   of whitespace    is too    damn high     ".squish
 }}}
+
+<br/>
 
 ==== Validations ====
 {{{class="ruby"
@@ -47,6 +51,8 @@ validates :email, uniqueness: true, on: :create # ( only validates uniqueness wh
 validates :age, numericality: true, on: :update # ( only validates numericality on Update)
 }}}
 
+<br/>
+
 ==== Rake commands ====
 {{{
 List rake tasks
@@ -60,6 +66,8 @@ Boot up the server on 192.168.1.23:3003
 {{{
   rails s -p 3003 -b 192.168.1.23
 }}}
+
+<br/>
 
 ==== Console ====
 Execute raw SQL on the db
