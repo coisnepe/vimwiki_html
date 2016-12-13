@@ -1,0 +1,45 @@
+<html>
+<head>
+    <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
+    <title>Ruby</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+</head>
+<body>
+    <a href="index.html">Index</a>
+    <hr>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          
+<div id="Ruby"><h2 id="Ruby">Ruby</h2></div>
+
+<div id="Ruby-Core library"><h3 id="Core library">Core library</h3></div>
+
+<div id="Ruby-Core library-String"><h4 id="String">String</h4></div>
+<pre ruby>
+# `strip` on steroids: remove extra whitespaces around and within a string
+&gt;  "    The amount   of whitespace    is too    damn high     ".squish
+</pre>
+
+<div id="Ruby-Core library-Goodies"><h4 id="Goodies">Goodies</h4></div>
+
+<div id="Ruby-Core library-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
+<pre ruby>
+require "benchmark"
+
+puts Benchmark.measure { "something".capitalize }
+
+Benchmark.bm do |bm|
+  bm.report "message here" do
+    1_000.times do
+      "something".capitalize
+    end
+  end
+end
+</pre>
+
+        </div>
+      </div>
+    </div>
+</body>
+</html>
