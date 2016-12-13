@@ -3,7 +3,7 @@
 - [[#Rake|Rake]]
 
 ==== String ====
-{{{ruby
+{{{class="ruby"
 # `strip` on steroids: remove extra whitespaces around and within a string
 >  "    The amount   of whitespace    is too    damn high     ".squish
 }}}
