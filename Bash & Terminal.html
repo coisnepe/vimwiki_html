@@ -34,6 +34,16 @@ Chain commands
   ls -al | grep "file_name"
 </pre>
 
+<div id="Bash &amp; Terminal commands-xargs"><h3 id="xargs">xargs</h3></div>
+<p>
+Use the output of one command as arguments for the next
+</p>
+<pre>
+# Find ruby files in app/ that contain the string user.
+#   In the files matched, look for the string "transaction"
+  grep "users" -lr app/**/*.rb | xargs grep "transaction"
+</pre>
+
 <div id="Bash &amp; Terminal commands-wc"><h3 id="wc">wc</h3></div>
 <p>
 Count words, lines, characters, etc... in a file
@@ -44,18 +54,22 @@ Count words, lines, characters, etc... in a file
 
 <div id="Bash &amp; Terminal commands-grep"><h3 id="grep">grep</h3></div>
 <p>
-Search for a string and display X lines before, after, or around the matches
-</p>
-<pre>
-  grep -[B | A | C] X "some string"
-</pre>
-
-<p>
-Search one file, or recursively through a folder
+Search one file 
 </p>
 <pre>
   grep "redmine" /etc/hosts
-  grep "something" -r /home/user/Downloads
+</pre>
+
+<p>
+Flags
+</p>
+<pre>
+  -r # search recursively
+  -n # display the line number
+  -l # only output filenames of matched files
+  -B 10 # display 10 lines before the line containing the match
+  -A 10 # display 10 lines after the line containing the match
+  -C 10 # display 10 lines before and after the line containing the match
 </pre>
 
       </div>
