@@ -1,6 +1,7 @@
 == Ruby ==
 - [[#Array|Array]]
-- [[#Benchmark|Benchmark]]
+- [[#Goodies|Goodies]]
+  - [[#Benchmark|Benchmark]]
 
 <br/>
 

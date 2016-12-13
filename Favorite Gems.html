@@ -2,7 +2,7 @@
 
 <head>
   <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
-  <title>Ruby</title>
+  <title>Favorite Gems</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
@@ -25,72 +25,11 @@
     <div class="row">
       <div class="col-md-12">
         
-<div id="Ruby"><h2 id="Ruby">Ruby</h2></div>
-<ul>
-<li>
-<a href="Ruby.html#Array">Array</a>
-
-<li>
-<a href="Ruby.html#Goodies">Goodies</a>
-
-<ul>
-<li>
-<a href="Ruby.html#Benchmark">Benchmark</a>
-
-</ul>
-</ul>
+<div id="Favorite Gems"><h2 id="Favorite Gems">Favorite Gems</h2></div>
 
 <p>
-<br/>
+<a href="http:&#47;&#47;sequel.jeremyevans.net&#47;">Sequel</a>
 </p>
-
-<div id="Ruby-Core library"><h3 id="Core library">Core library</h3></div>
-
-<div id="Ruby-Core library-Array"><h4 id="Array">Array</h4></div>
-<pre class="ruby">
-# reject values
-  ["", "1", "2"].reject(&amp;:empty?)
-
-# Select values
-  [0, 1, 2].select { |value| value &gt;= 1 }
-
-# Check values against condition
-  [1, 2, 3].any? { |value| value &gt; 1 }
-
-# Select a random value
-  %w(one two three).sample
-</pre>
-
-<p>
-<br/>
-</p>
-
-
-<div id="Ruby-Core library-Goodies"><h4 id="Goodies">Goodies</h4></div>
-
-<pre class="ruby">
-# Execute unix commands using backticks `. Returns a string
-`wc -l line_count.csv`
-</pre>
-
-<p>
-<br/>
-</p>
-
-<div id="Ruby-Core library-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
-<pre class="ruby">
-require "benchmark"
-
-puts Benchmark.measure { "something".capitalize }
-
-Benchmark.bm do |bm|
-  bm.report "message here" do
-    1_000.times do
-      "something".capitalize
-    end
-  end
-end
-</pre>
 
       </div>
     </div>

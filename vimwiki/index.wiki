@@ -2,8 +2,11 @@
 	* Ruby & Rails
 		- [[Ruby]]
 		- [[Rails]]
-		- [[Sequel]]
-		- [[RSpec]]
+		- [[Favorite Gems]]
+			- [[Sequel]]
+			- Testing
+				- [[RSpec]]
+				- [[Factory Girl]]
 	* Javascript
 		- [[ES6]]
 		- [[ReactJS]]
