@@ -14,6 +14,9 @@
 
 # Check values against condition
   [1, 2, 3].any? { |value| value > 1 }
+
+# Select a random value
+  %w(one two three).sample
 }}}
 
 ==== Goodies ====
