@@ -31,6 +31,9 @@
 <a href="Rails.html#String">String</a>
 
 <li>
+<a href="Rails.html#Validations">Validations</a>
+
+<li>
 <a href="Rails.html#Rake">Rake</a>
 
 </ul>
@@ -41,13 +44,50 @@
 &gt;  "    The amount   of whitespace    is too    damn high     ".squish
 </pre>
 
+<div id="Ruby on Rails-Validations"><h4 id="Validations">Validations</h4></div>
+<pre class="ruby">
+# Presence
+validates :name, presence: true
+validates :name, :login, :email, presence: true
+
+# Acceptance (checkbox should be ticked before going further)
+validates :terms_of_service, acceptance: true
+validates :terms_of_service, acceptance: { accept: 'yes' }
+
+validates :name, length: { minimum: 2 }
+validates :bio, length: { maximum: 500 }
+validates :password, length: { in: 6..20 }
+validates :registration_number, length: { is: 6 }
+
+# Numericality
+validates :points, numericality: true
+validates :games_played, numericality: { only_integer: true }
+  :greater_than
+  :greater_than_or_equal_to
+  :equal_to
+  :less_than
+  :less_than_or_equal_to
+  :odd
+  :even
+
+# Uniqueness
+validates :email, uniqueness: true
+validates :name, uniqueness: { scope: :year,
+  message: "should happen once per year" }
+validates :name, uniqueness: { case_sensitive: false }
+
+# "On" (only checks something for the specified operation)
+validates :email, uniqueness: true, on: :create # ( only validates uniqueness when Create)
+validates :age, numericality: true, on: :update # ( only validates numericality on Update)
+</pre>
+
 <div id="Ruby on Rails-Rake commands"><h4 id="Rake commands">Rake commands</h4></div>
 <pre>
 List rake tasks
 $ rake -T
 
 Inventory of TODO, FIXME, OPTIMIZE, etc... comments in the project
-$ rake notes  
+$ rake notes
 </pre>
 
 <p>
