@@ -2,6 +2,7 @@
 - [[#String|String]]
 - [[#Validations|Validations]]
 - [[#Rake commands|Rake commands]]
+- [[#Console|Console]]
 
 ==== String ====
 {{{class="ruby"
