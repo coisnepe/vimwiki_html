@@ -34,8 +34,8 @@
 
 ===== Basics =====
 {{{class="javascript"
-  const constVariableg = "string"; // can only be defined once. Global.
-  let letVariable = "string"; // can only be defined once, throws an error otherwise. Scoped.
+  const constVariableg = "string"; // can only be defined once. Global, and its value cannot be altered (unless it's an Object)
+  let letVariable = "string"; // can only be declared once, but its value can be altered.
   var varVariable = "string"; // can be redefined at will.
 }}}
 
