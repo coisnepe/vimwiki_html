@@ -4,6 +4,7 @@
   <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
   <title>ES6</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
   <script>
@@ -26,6 +27,14 @@
       <div class="col-md-12">
         
 <div id="ES6"><h2 id="ES6">ES6</h2></div>
+<p>
+<br />
+<a href="http:&#47;&#47;ricostacruz.com&#47;cheatsheets&#47;es6.html">ES2015 Cheatsheet</a>
+</p>
+
+<p>
+<br />
+</p>
 
 <div id="ES6-LESSONS from es6.io by Wes Bos"><h3 id="LESSONS from es6.io by Wes Bos">LESSONS from es6.io by Wes Bos</h3></div>
 
@@ -329,11 +338,15 @@ Array.of() makes an array with the arguments passed to it
 </p>
 <pre class="javascript">
     const group = [{"id": "1", "name": "me"}, {"id": "2", "name": "you"}];
-    const person = posts.find(person =&gt; person.name === "you");
+    const person = group.find(person =&gt; person.name === "you");
     // Object {id: "2", name: "you"}
+</pre>
+
+<p>
 .findIndex()
-{{{class="javascript"
-    const personIndex = posts.findIndex(person =&gt; person.name === "you");
+</p>
+<pre class="javascript">
+    const personIndex = group.findIndex(person =&gt; person.name === "you");
     // 1
 </pre>
 

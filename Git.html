@@ -4,6 +4,7 @@
   <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
   <title>Git</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
   <script>
@@ -43,9 +44,10 @@ Rename the current branch
 Easily switch between branches by "stashing" current changes instead of committing them.
 </p>
 <pre>
-  git stash list
-  git stash pop [-u]
-  git stash drop stash{0}
+  git stash list           # Available stashes
+  git stash [-u]           # Stash current changes (-u stashes new files too)
+  git stash pop (stash{1}) # Restore a (specific or latest) stash
+  git stash drop stash{0}  # Delete a stash
 </pre>
 
 <p>

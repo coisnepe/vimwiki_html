@@ -10,9 +10,10 @@ Rename the current branch
 === stash ===
 Easily switch between branches by "stashing" current changes instead of committing them.
 {{{
-  git stash list
-  git stash pop [-u]
-  git stash drop stash{0}
+  git stash list           # Available stashes
+  git stash [-u]           # Stash current changes (-u stashes new files too)
+  git stash pop (stash{1}) # Restore a (specific or latest) stash
+  git stash drop stash{0}  # Delete a stash
 }}}
 
 <br/>

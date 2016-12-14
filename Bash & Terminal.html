@@ -4,6 +4,7 @@
   <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
   <title>Bash %title% Terminal</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
   <script>
@@ -26,6 +27,21 @@
       <div class="col-md-12">
         
 <div id="Bash &amp; Terminal commands"><h2 id="Bash &amp; Terminal commands">Bash &amp; Terminal commands</h2></div>
+
+<ul>
+<li>
+<a href="Bash & Terminal.html#xargs">xargs</a>
+
+<li>
+<a href="Bash & Terminal.html#wc">wc - Word Count</a>
+
+<li>
+<a href="Bash & Terminal.html#grep">grep</a>
+
+<li>
+<a href="Bash & Terminal.html#du&#47;df">du/df - Directory Size</a>
+
+</ul>
 
 <p>
 Chain commands
@@ -82,6 +98,38 @@ Flags
   -B 10 # display 10 lines before the line containing the match
   -A 10 # display 10 lines after the line containing the match
   -C 10 # display 10 lines before and after the line containing the match
+</pre>
+
+<p>
+<br />
+</p>
+
+<div id="Bash &amp; Terminal commands-du&#47;df"><h3 id="du&#47;df">du/df</h3></div>
+<p>
+du : Display sizes of directories
+</p>
+<pre>
+du
+  -s # Display an entry for each file/directory
+  -h # Display the sizes in a "human readable" way
+  directory_name # Specific directory
+  * # Every directory in pwd
+
+# 1: Get directories and files by size
+# 2: Reverse sort (-r reverse / -h readable)
+# 3: Only display the top 10 results
+
+du -sh * | sort -rh | head -10
+</pre>
+
+<p>
+df : Display space usage at the disk level
+</p>
+<pre>
+df
+  -h # Display the sizes in a "human readable" format
+
+df -h
 </pre>
 
       </div>

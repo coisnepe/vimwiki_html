@@ -1,4 +1,8 @@
 == ES6 ==
+<br />
+[[http://ricostacruz.com/cheatsheets/es6.html|ES2015 Cheatsheet]]
+
+<br />
 
 === LESSONS from es6.io by Wes Bos ===
 
@@ -216,11 +220,13 @@ Array.of() makes an array with the arguments passed to it
 .find()
 {{{class="javascript"
     const group = [{"id": "1", "name": "me"}, {"id": "2", "name": "you"}];
-    const person = posts.find(person => person.name === "you");
+    const person = group.find(person => person.name === "you");
     // Object {id: "2", name: "you"}
+}}}
+
 .findIndex()
 {{{class="javascript"
-    const personIndex = posts.findIndex(person => person.name === "you");
+    const personIndex = group.findIndex(person => person.name === "you");
     // 1
 }}}
 

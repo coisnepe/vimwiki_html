@@ -1,1 +1,3 @@
 == Sequel ==
+
+[[http://ricostacruz.com/cheatsheets/sequel.html|Sequel Cheatsheet]]
