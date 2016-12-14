@@ -41,8 +41,10 @@
 <li>
 <a href="Bash & Terminal.html#du&#47;df">du/df - Directory Size</a>
 
-</ul>
+<li>
+<a href="Bash & Terminal.html#Snippets">Snippets</a>
 
+</ul>
 <p>
 Chain commands
 </p>
@@ -98,6 +100,10 @@ Flags
   -B 10 # display 10 lines before the line containing the match
   -A 10 # display 10 lines after the line containing the match
   -C 10 # display 10 lines before and after the line containing the match
+  
+  -i # case insensitive
+  -h # Omit filenames in the results
+  -v # Invert, i.e. display lines that do not match
 </pre>
 
 <p>
@@ -130,6 +136,20 @@ df
   -h # Display the sizes in a "human readable" format
 
 df -h
+</pre>
+
+<p>
+<br/>
+</p>
+
+<div id="Bash &amp; Terminal commands-Snippets"><h3 id="Snippets">Snippets</h3></div>
+<pre>
+# 1: Find ruby files in the current directory
+# 2: Count the number of lines
+# 3: Reverse sort them
+# 4: Omit the "total" line
+# 5: Only display the top 10 results
+find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head -10
 </pre>
 
       </div>
