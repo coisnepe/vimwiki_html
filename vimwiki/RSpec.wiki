@@ -12,3 +12,9 @@ config.generators do |g|
   g.fixture_replacement :factory_girl, dir: 'spec/factories'
 end
 }}}
+
+<br />
+
+Peak at the generators from the console with `Rails.application.config.generators`
+[[http://api.rubyonrails.org/classes/Rails/Generators.html|API for Rails generators]]
+
