@@ -102,4 +102,8 @@ shred -uvzn 3 /Documents/file_to_nuke.txt
 # 4: Omit the "total" line
 # 5: Only display the top 10 results
 find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head -10
+
+# 1: Find all files in a directory
+# 2: Nuke!
+find directory -depth -type f -exec shred -uvzn 2 {} \;
 }}}
