@@ -28,6 +28,23 @@
         
 <div id="RSpec"><h2 id="RSpec">RSpec</h2></div>
 
+<p>
+<br />
+</p>
+
+<p>
+Generators may still not be configured after having run <code>rails g rspec:install</code>.
+To activate them:
+</p>
+<pre class="ruby">
+# Put in a config/initializers file
+config.generators do |g|
+  g.test_framework :rspec, fixture: true, views: false
+  g.integration_tool :rspec, fixture: true, views: false
+  g.fixture_replacement :factory_girl, dir: 'spec/factories'
+end
+</pre>
+
       </div>
     </div>
   </div>

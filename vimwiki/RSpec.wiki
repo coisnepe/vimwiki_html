@@ -1,1 +1,14 @@
 == RSpec ==
+
+<br />
+
+Generators may still not be configured after having run `rails g rspec:install`.
+To activate them:
+{{{class="ruby"
+# Put in a config/initializers file
+config.generators do |g|
+  g.test_framework :rspec, fixture: true, views: false
+  g.integration_tool :rspec, fixture: true, views: false
+  g.fixture_replacement :factory_girl, dir: 'spec/factories'
+end
+}}}
