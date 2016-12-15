@@ -42,9 +42,13 @@
 <a href="Bash & Terminal.html#du&#47;df">du/df - Directory Size</a>
 
 <li>
+<a href="Bash & Terminal.html#shred">Shred</a>
+
+<li>
 <a href="Bash & Terminal.html#Snippets">Snippets</a>
 
 </ul>
+
 <p>
 Chain commands
 </p>
@@ -142,6 +146,24 @@ df -h
 <br/>
 </p>
 
+<div id="Bash &amp; Terminal commands-shred"><h3 id="shred">shred</h3></div>
+<p>
+Safely delete files : rm on steroids! It overwrites the file content
+</p>
+<pre>
+shred
+  -f   # Force change permissions to allow writing
+  -n   # Number of iterations
+  -v   # Verbose (show progress
+  -u   # Actually remove file after progress
+  -z   # On the last round, overwrite the file with zeros
+
+shred -uvzn 3 /Documents/file_to_nuke.txt
+</pre>
+
+<p>
+<br />
+</p>
 <div id="Bash &amp; Terminal commands-Snippets"><h3 id="Snippets">Snippets</h3></div>
 <pre>
 # 1: Find ruby files in the current directory

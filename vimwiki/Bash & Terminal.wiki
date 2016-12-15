@@ -4,7 +4,9 @@
 - [[#wc|wc - Word Count]]
 - [[#grep|grep]]
 - [[#du/df|du/df - Directory Size]]
+- [[#shred|Shred]]
 - [[#Snippets|Snippets]]
+
 Chain commands
 {{{
   ls -al | grep "file_name"
@@ -78,6 +80,20 @@ df -h
 
 <br/>
 
+=== shred ===
+Safely delete files : rm on steroids! It overwrites the file content
+{{{
+shred
+  -f   # Force change permissions to allow writing
+  -n   # Number of iterations
+  -v   # Verbose (show progress
+  -u   # Actually remove file after progress
+  -z   # On the last round, overwrite the file with zeros
+
+shred -uvzn 3 /Documents/file_to_nuke.txt
+}}}
+
+<br />
 === Snippets ===
 {{{
 # 1: Find ruby files in the current directory
