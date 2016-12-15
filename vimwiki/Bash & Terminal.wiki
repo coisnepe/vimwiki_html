@@ -3,6 +3,7 @@
 - [[#xargs|xargs]]
 - [[#wc|wc - Word Count]]
 - [[#grep|grep]]
+- [[#find|find]]
 - [[#du/df|du/df - Directory Size]]
 - [[#shred|Shred]]
 - [[#Snippets|Snippets]]
