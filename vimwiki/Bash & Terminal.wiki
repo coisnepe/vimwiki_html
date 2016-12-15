@@ -105,5 +105,5 @@ find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head 
 
 # 1: Find all files in a directory
 # 2: Nuke!
-find directory -depth -type f -exec shred -uvzn 2 {} \;
+find directory_path/ -depth -type f -exec shred -uvzn 2 {} \;
 }}}
