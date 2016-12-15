@@ -54,6 +54,20 @@ Flags
 
 <br />
 
+=== find ===
+{{{
+find
+  -name "*.js"  # Find js files
+  -type f       # Files
+  -not
+    -path       # Exclude path
+
+# Find all .js files in the app directory minus [[app/assets/.]]
+find app/. -name "*.js" -type f -not -path "*/assets/*"
+}}}
+
+<br/>
+
 === du/df ===
 du : Display sizes of directories
 {{{

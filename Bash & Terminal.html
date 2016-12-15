@@ -114,6 +114,22 @@ Flags
 <br />
 </p>
 
+<div id="Bash &amp; Terminal commands-find"><h3 id="find">find</h3></div>
+<pre>
+find
+  -name "*.js"  # Find js files
+  -type f       # Files
+  -not
+    -path       # Exclude path
+
+# Find all .js files in the app directory minus app/assets/.
+find app/. -name "*.js" -type f -not -path "*/assets/*"
+</pre>
+
+<p>
+<br/>
+</p>
+
 <div id="Bash &amp; Terminal commands-du&#47;df"><h3 id="du&#47;df">du/df</h3></div>
 <p>
 du : Display sizes of directories
