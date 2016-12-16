@@ -130,5 +130,5 @@ $ sudo apt-get install xclip
 $ cat my_file.txt | xclip -selection clipboard
 
 # OSX: pbcopy and pbpaste
-$ cat ~/.ssh/id_rsa.pub | pbcopy // 
+$ cat ~/.ssh/id_rsa.pub | pbcopy 
 }}}
