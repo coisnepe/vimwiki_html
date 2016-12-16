@@ -32,6 +32,9 @@
 <a href="Ruby.html#Array">Array</a>
 
 <li>
+<a href="Ruby.html#Files&amp;Directories">Files and Directories</a>
+
+<li>
 <a href="Ruby.html#Goodies">Goodies</a>
 
 <ul>
@@ -66,8 +69,19 @@
 <br/>
 </p>
 
+<div id="Ruby-Files&amp;Directories"><h3 id="Files&amp;Directories">Files&amp;Directories</h3></div>
+<pre class="ruby">
+Dir.pwd                             # Current directory
+Dir.chdir "take_me_home/directory/" # Change directory
+Dir.glob("*")                       # Array of files' name in pwd
+Dir["/target_directory/*"]          # Array of files' path + name
+</pre>
 
-<div id="Ruby-Core library-Goodies"><h4 id="Goodies">Goodies</h4></div>
+<p>
+<br/>
+</p>
+
+<div id="Ruby-Files&amp;Directories-Goodies"><h4 id="Goodies">Goodies</h4></div>
 
 <pre class="ruby">
 # Execute unix commands using backticks `. Returns a string
@@ -78,7 +92,7 @@
 <br/>
 </p>
 
-<div id="Ruby-Core library-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
+<div id="Ruby-Files&amp;Directories-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
 <pre class="ruby">
 require "benchmark"
 
@@ -92,7 +106,7 @@ Benchmark.bm do |bm|
       "something".capitalize
     end
   end
-  
+
   bm.report "another convoluted method" do
     iterations.times do
       "something"[0].upcase + "something"[1..-1]

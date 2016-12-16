@@ -1,5 +1,6 @@
 == Ruby ==
 - [[#Array|Array]]
+- [[#Files&Directories|Files and Directories]]
 - [[#Goodies|Goodies]]
   - [[#Benchmark|Benchmark]]
 
@@ -24,6 +25,15 @@
 
 <br/>
 
+=== Files&Directories ===
+{{{class="ruby"
+Dir.pwd                             # Current directory
+Dir.chdir "take_me_home/directory/" # Change directory
+Dir.glob("*")                       # Array of files' name in pwd
+Dir["/target_directory/*"]          # Array of files' path + name
+}}}
+
+<br/>
 
 ==== Goodies ====
 
@@ -48,7 +58,7 @@ Benchmark.bm do |bm|
       "something".capitalize
     end
   end
-  
+
   bm.report "another convoluted method" do
     iterations.times do
       "something"[0].upcase + "something"[1..-1]

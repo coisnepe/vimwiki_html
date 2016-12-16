@@ -1,6 +1,7 @@
 == Bash & Terminal commands ==
 
 - [[#xargs|xargs]]
+- [[#cp|cp]]
 - [[#wc|wc - Word Count]]
 - [[#grep|grep]]
 - [[#find|find]]
@@ -25,6 +26,17 @@ $ grep "users" -lr app/**/*.rb | xargs grep "transaction"
 
 <br/>
 
+=== cp ===
+{{{
+$ cp source_file target_file (or target_directory/)
+     -r   # Recursive
+     -i   # Interactive: ask what to do with existing files in the destination
+     -v   # Verbose
+     -f   # Force
+}}}
+
+<br />
+
 === wc ===
 Count words, lines, characters, etc... in a file
 {{{
@@ -47,7 +59,7 @@ Flags
   -B 10   # display 10 lines before the line containing the match
   -A 10   # display 10 lines after the line containing the match
   -C 10   # display 10 lines before and after the line containing the match
-  
+
   -i      # case insensitive
   -h      # Omit filenames in the results
   -v      # Invert, i.e. display lines that do not match
@@ -109,6 +121,7 @@ $ shred -uvzn 3 /Documents/file_to_nuke.txt
 }}}
 
 <br />
+
 === Snippets ===
 {{{
 # == Count the number of lines for  files in a given directory and display the sorted result ==
@@ -130,5 +143,5 @@ $ sudo apt-get install xclip
 $ cat my_file.txt | xclip -selection clipboard
 
 # OSX: pbcopy and pbpaste
-$ cat ~/.ssh/id_rsa.pub | pbcopy 
+$ cat ~/.ssh/id_rsa.pub | pbcopy
 }}}
