@@ -10,7 +10,7 @@
 
 Chain commands
 {{{
-  ls -al | grep "file_name"
+$ ls -al | grep "file_name"
 }}}
 
 <br/>
@@ -20,7 +20,7 @@ Use the output of one command as arguments for the next
 {{{
 # Find ruby files in app/ that contain the string user.
 #   In the files matched, look for the string "transaction"
-  grep "users" -lr app/**/*.rb | xargs grep "transaction"
+$ grep "users" -lr app/**/*.rb | xargs grep "transaction"
 }}}
 
 <br/>
@@ -28,7 +28,7 @@ Use the output of one command as arguments for the next
 === wc ===
 Count words, lines, characters, etc... in a file
 {{{
-  wc -[w | l | c] your_file.csv
+$ wc -[w | l | c] your_file.csv
 }}}
 
 <br/>
@@ -36,7 +36,7 @@ Count words, lines, characters, etc... in a file
 === grep ===
 Search one file
 {{{
-  grep "redmine" /etc/hosts
+$ grep "redmine" /etc/hosts
 }}}
 
 Flags
@@ -64,7 +64,7 @@ find
     -path       # Exclude path
 
 # Find all .js files in the app directory minus [[app/assets/.]]
-find app/. -name "*.js" -type f -not -path "*/assets/*"
+$ find app/. -name "*.js" -type f -not -path "*/assets/*"
 }}}
 
 <br/>
@@ -82,7 +82,7 @@ du
 # 2: Reverse sort (-r reverse / -h readable)
 # 3: Only display the top 10 results
 
-du -sh * | sort -rh | head -10
+$ du -sh * | sort -rh | head -10
 }}}
 
 df : Display space usage at the disk level
@@ -90,7 +90,7 @@ df : Display space usage at the disk level
 df
   -h # Display the sizes in a "human readable" format
 
-df -h
+$ df -h
 }}}
 
 <br/>
@@ -105,7 +105,7 @@ shred
   -u   # Actually remove file after progress
   -z   # On the last round, overwrite the file with zeros
 
-shred -uvzn 3 /Documents/file_to_nuke.txt
+$ shred -uvzn 3 /Documents/file_to_nuke.txt
 }}}
 
 <br />
@@ -118,9 +118,13 @@ shred -uvzn 3 /Documents/file_to_nuke.txt
 # 3: Reverse sort them
 # 4: Omit the "total" line
 # 5: Only display the top 10 results
-find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head -10
+$ find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head -10
 
 # 1: Find all files in a directory
 # 2: Nuke!
-find directory_path/ -depth -type f -exec shred -uvzn 2 {} \;
+$ find directory_path/ -depth -type f -exec shred -uvzn 2 {} \;
+
+# == Copy a command output to the clipboard
+$ sudo apt-get install xclip
+$ cat my_file.txt | xclip -selection clipboard
 }}}
