@@ -199,8 +199,12 @@ $ find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | hea
 $ find directory_path/ -depth -type f -exec shred -uvzn 2 {} \;
 
 # == Copy a command output to the clipboard
+# Linux
 $ sudo apt-get install xclip
 $ cat my_file.txt | xclip -selection clipboard
+
+# OSX: pbcopy and pbpaste
+$ cat ~/.ssh/id_rsa.pub | pbcopy // 
 </pre>
 
       </div>
