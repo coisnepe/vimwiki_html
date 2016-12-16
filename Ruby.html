@@ -84,10 +84,18 @@ require "benchmark"
 
 puts Benchmark.measure { "something".capitalize }
 
+iterations = 1_000
+
 Benchmark.bm do |bm|
   bm.report "message here" do
-    1_000.times do
+    iterations.times do
       "something".capitalize
+    end
+  end
+  
+  bm.report "another convoluted method" do
+    iterations.times do
+      "something"[0].upcase + "something"[1..-1]
     end
   end
 end
