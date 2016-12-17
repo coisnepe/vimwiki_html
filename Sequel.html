@@ -32,6 +32,22 @@
 <a href="http:&#47;&#47;ricostacruz.com&#47;cheatsheets&#47;sequel.html">Sequel Cheatsheet</a>
 </p>
 
+
+<div id="Sequel-Postgres"><h3 id="Postgres">Postgres</h3></div>
+<p>
+<a href="https:&#47;&#47;github.com&#47;jeremyevans&#47;sequel&#47;blob&#47;master&#47;spec&#47;adapters&#47;postgres_spec.rb">Postgres' specs</a> (search "@db.create_table!(:items)")
+</p>
+<pre class="ruby">
+DB.extension :pg_array, :pg_json
+
+DB.create_table :movies do
+  column :genres, 'text[]'   # Create an Array column
+  column :actors, 'jsonb[]'  # jsonb column
+end
+
+DB[:movies].insert(genres: Sequel.pg_array(["Titanic", "Winter Sleep"], :text))
+</pre>
+
       </div>
     </div>
   </div>

@@ -145,3 +145,16 @@ $ cat my_file.txt | xclip -selection clipboard
 # OSX: pbcopy and pbpaste
 $ cat ~/.ssh/id_rsa.pub | pbcopy
 }}}
+
+[[http://stackoverflow.com/questions/3509332/how-to-convert-a-tab-separated-file-into-comma-separated-file#30219010|Substitute characters in file]]
+
+[[http://stackoverflow.com/questions/64860/best-way-to-convert-text-files-between-character-sets#64889|Change file encoding]]
+
+[[http://mindspill.net/computing/linux-notes/determine-and-change-file-character-encoding/|File encoding in Unix]]
+{{{
+# Encode file to UTF-8
+$ vim +"set nobomb | set fenc=utf8 | x" file_to_encode.txt
+
+# Substitute tabs with semi-colons. On OSX, \t doesn't work. ctrl-v then hit tab
+$ LC_CTYPE=C sed 's/ /;/g' infile.txt outfile.csv
+}}}

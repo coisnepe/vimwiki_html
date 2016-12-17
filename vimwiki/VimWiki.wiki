@@ -11,6 +11,19 @@ Some basics to get around Vimwiki
 
 <br/>
 
+=== Config ===
+{{{
+# .vimrc
+let g:vimwiki_list = [{
+  \ 'path': '$HOME/vimwiki',
+  \ 'template_path': '$HOME/vimwiki/templates/',
+  \ 'template_default': 'default',
+  \ 'template_ext': '.html',
+  \ 'nested_syntaxes': {'python': 'python', 'css': 'css', 'html': 'html', 'ruby': 'ruby', 'javascript': 'javascript'}}]
+}}}
+
+<br />
+
 === Links ===
 - [[http://vimwiki.github.io/]]
 - [[https://github.com/vimwiki/vimwiki/blob/dev/doc/vimwiki.txt]]

@@ -1,3 +1,17 @@
 == Sequel ==
 
 [[http://ricostacruz.com/cheatsheets/sequel.html|Sequel Cheatsheet]]
+
+
+=== Postgres ===
+[[https://github.com/jeremyevans/sequel/blob/master/spec/adapters/postgres_spec.rb|Postgres' specs]] (search "@db.create_table!(:items)")
+{{{class="ruby"
+DB.extension :pg_array, :pg_json
+
+DB.create_table :movies do
+  column :genres, 'text[]'   # Create an Array column
+  column :actors, 'jsonb[]'  # jsonb column
+end
+
+DB[:movies].insert(genres: Sequel.pg_array(["Titanic", "Winter Sleep"], :text))
+}}}

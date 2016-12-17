@@ -347,6 +347,11 @@ You can populate an object with variables without specifying their key names
 
 <br/>
 
+
+
+
+
+
 ===== filter and reduce =====
 {{{class="javascript"
   const numbers = [3, 62, 234, 7, 23, 74, 23, 76, 92];

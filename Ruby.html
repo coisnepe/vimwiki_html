@@ -70,11 +70,21 @@
 </p>
 
 <div id="Ruby-Files&amp;Directories"><h3 id="Files&amp;Directories">Files&amp;Directories</h3></div>
+<p>
+Directories
+</p>
 <pre class="ruby">
 Dir.pwd                             # Current directory
 Dir.chdir "take_me_home/directory/" # Change directory
 Dir.glob("*")                       # Array of files' name in pwd
+Dir.glob('dir_name/**/*.{avi,m4a}') # Every avi and m4a files, including in sub-directories
 Dir["/target_directory/*"]          # Array of files' path + name
+</pre>
+<p>
+Files
+</p>
+<pre class="ruby">
+
 </pre>
 
 <p>
