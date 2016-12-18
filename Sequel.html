@@ -27,25 +27,38 @@
       <div class="col-md-12">
         
 <div id="Sequel"><h2 id="Sequel">Sequel</h2></div>
+<ul>
+<li>
+<a href="Sequel.html#Postgres">Postgres</a>
+
+</ul>
 
 <p>
 <a href="http:&#47;&#47;ricostacruz.com&#47;cheatsheets&#47;sequel.html">Sequel Cheatsheet</a>
 </p>
 
+<p>
+<br />
+</p>
 
 <div id="Sequel-Postgres"><h3 id="Postgres">Postgres</h3></div>
 <p>
 <a href="https:&#47;&#47;github.com&#47;jeremyevans&#47;sequel&#47;blob&#47;master&#47;spec&#47;adapters&#47;postgres_spec.rb">Postgres' specs</a> (search "@db.create_table!(:items)")
 </p>
+
+<p>
+<a href="http:&#47;&#47;sequel.jeremyevans.net&#47;rdoc-plugins&#47;files&#47;lib&#47;sequel&#47;extensions&#47;pg_json_ops_rb.html">pg_json_ops</a>
+</p>
 <pre class="ruby">
-DB.extension :pg_array, :pg_json
+DB.extension :pg_array, :pg_json, :pg_json_ops
 
 DB.create_table :movies do
   column :genres, 'text[]'   # Create an Array column
-  column :actors, 'jsonb[]'  # jsonb column
+  column :actors, 'jsonb'  # jsonb column
 end
 
 DB[:movies].insert(genres: Sequel.pg_array(["Titanic", "Winter Sleep"], :text))
+DB[:movies].insert(actors: Sequel.pg_jsonb({"one" =&gt; "two"}))
 </pre>
 
       </div>
