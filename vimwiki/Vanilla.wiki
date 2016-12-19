@@ -1,6 +1,13 @@
 == Javascript ==
 
+[[https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout|setTimeout()]]
+
+[[https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval|setInterval()]]
+
+<br />
+
 {{{class="javascript"
  // Scroll to the bottom of the page
- window.scrollTo(0,document.body.scrollHeight);}
+ window.scrollTo(0, document.body.scrollHeight);
+ window.setTimeout(function, milliseconds);
  }}}
