@@ -8,6 +8,7 @@
 				- [[RSpec]]
 				- [[Factory Girl]]
 	* Javascript
+    - [[Vanilla]]
 		- [[ES6]]
 		- [[ReactJS]]
 		- [[VueJS]]
