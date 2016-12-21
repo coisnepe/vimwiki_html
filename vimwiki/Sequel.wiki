@@ -1,7 +1,29 @@
 == Sequel ==
 - [[#Postgres|Postgres]]
+- [[#Links|Links]]
 
-[[http://ricostacruz.com/cheatsheets/sequel.html|Sequel Cheatsheet]]
+<br />
+
+=== Links ===
+- [[http://ricostacruz.com/cheatsheets/sequel.html|Sequel Cheatsheet]]
+- [[https://github.com/jeremyevans/sequel|Github]]
+- [[http://sequel.jeremyevans.net/documentation.html|Official documentation]]
+
+<br />
+
+{{{class="ruby"
+# Filter dates
+DB[:users].where { created_at > Date.today << 1 }   # 1 month
+DB[:users].where { created_at > (Date.today - 10) } # 10 days
+# > WHERE created_at (`created_at` > '2016-12-11')
+
+DB[:users].where(created_at: ((Date.today - 10)..(Date.today)))
+}}}
+
+{{{class="ruby"
+# REGEX
+DB[:users].where(login: /Admin/i)
+}}}
 
 <br />
 
@@ -17,6 +39,6 @@ DB.create_table :movies do
   column :actors, 'jsonb'  # jsonb column
 end
 
-DB[:movies].insert(genres: Sequel.pg_array(["Titanic", "Winter Sleep"], :text))
-DB[:movies].insert(actors: Sequel.pg_jsonb({"one" => "two"}))
+DB[:movies].insert(genres: Sequel.pg_array(["Comedy", "Documentary"], :text))
+DB[:movies].insert(actors: Sequel.pg_jsonb({"leading" => "Chuck Norris"}))
 }}}
