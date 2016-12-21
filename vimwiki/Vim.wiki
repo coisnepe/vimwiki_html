@@ -1,0 +1,8 @@
+== Vim ==
+
+{{{
+:u      # Undo
+ctrl+u  # Redo
+
+:e      # Edit
+}}}
