@@ -7,6 +7,12 @@ Rename the current branch
 
 <br/>
 
+{{{
+# Find when a string was modified
+$ git log -S "find_me" --source --all
+          -p   # Show the entirety of the changes
+}}}
+
 === stash ===
 Easily switch between branches by "stashing" current changes instead of committing them.
 {{{
