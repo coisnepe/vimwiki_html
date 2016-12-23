@@ -138,6 +138,7 @@ Flags
 find
   -name "*.js"  # Find js files
   -type f       # Files
+  -maxdepth X   # Go at most X levels (1 == current directory only)
   -not
     -path       # Exclude path
 
@@ -241,10 +242,6 @@ $ vim +"set nobomb | set fenc=utf8 | x" file_to_encode.txt
 
 # Substitute tabs with semi-colons. On OSX, \t doesn't work. ctrl-v then hit tab
 $ LC_CTYPE=C sed 's/ /;/g' infile.txt outfile.csv
-</pre>
-
-<pre>
-find directory_name/. -type f -name "*.tmp" | xargs rm
 </pre>
 
       </div>
