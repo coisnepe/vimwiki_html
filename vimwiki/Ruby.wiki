@@ -14,10 +14,10 @@
   ["", "1", "2"].reject(&:empty?)
 
 # Select values
-  [0, 1, 2].select { |value| value >= 1 }
+  [10, 2, 1].select { |value| value >= 1 }
 
 # Check values against condition
-  [1, 2, 3].any? { |value| value > 1 }
+  [132, 12, 0.5].any? { |value| value > 1 }
 
 # Select a random value
   %w(one two three).sample
@@ -34,9 +34,11 @@ Dir.glob("*")                       # Array of files' name in pwd
 Dir.glob('dir_name/**/*.{avi,m4a}') # Every avi and m4a files, including in sub-directories
 Dir["/target_directory/*"]          # Array of files' path + name
 }}}
+
+
 Files
 {{{class="ruby"
-
+File.basename("my_code.rb")
 }}}
 
 <br/>
