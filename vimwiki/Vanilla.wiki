@@ -1,15 +1,8 @@
 == Javascript ==
 
-<br />
-
 [[https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setTimeout|setTimeout()]]
 
 [[https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval|setInterval()]]
-
-{{{class="javascript"
-window.setInterval(function(), 1000);
-window.clearInterval();
-}}}
 
 <br />
 

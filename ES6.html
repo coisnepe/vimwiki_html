@@ -106,6 +106,9 @@
 <a href="ES6.html#35 - Building your own Promises">35 - Building your own Promises</a>
 
 <li>
+<a href="ES6.html#36 - Chaining Promises + Flow control">36 - Chaining Promises + Flow control</a>
+
+<li>
 <a href="ES6.html#filter and reduce">filter and reduce</a>
 
 </ul>
@@ -477,21 +480,71 @@ You can populate an object with variables without specifying their key names
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-35 - Building your own Promises"><h5 id="35 - Building your own Promises">35 - Building your own Promises</h5></div>
 <pre class="javascript">
+// Throw an Error object rather than a plain message.
   const p = new Promise((resolve, reject) =&gt; {
     setTimeout(() =&gt; {
       reject(Error("This error is wrapped in an error Object"));
     }, 1000);
   });
   p.then("Hey").catch((error) =&gt; console.log(error));
+
+  const op = new Promise((resolve, reject) =&gt; {
+    setTimeout(() =&gt; {
+      resolve("It worked");
+    }, 1000)
+  });
 </pre>
 
 <p>
 <br/>
 </p>
 
+<div id="ES6-LESSONS from es6.io by Wes Bos-36 - Chaining Promises + Flow control"><h5 id="36 - Chaining Promises + Flow control">36 - Chaining Promises + Flow control</h5></div>
+<pre class="javascript">
+  const posts = [
+    { id: 1, author: "Hemingway" },
+    { id: 2, author: "Whitman" }
+  ];
+
+  const authors = [
+    { id: 1, origin: "US", first_name: "Ernest", last_name: "Hemingway" },
+    { id: 2, origin: "US", first_name: "Walt", last_name: "Whitman" }
+  ];
+
+  function getPostById(id) {
+    return new Promise((resolve, reject) =&gt; {
+      const post = posts.find((post) =&gt; post.id == id);
+      if(post) {
+        resolve(post);
+      } else {
+        reject(Error("Post not found"));
+      }
+    });
+  };
+
+  function incorporateAuthorInfo(post){
+    return new Promise((resolve, reject) =&gt; {
+      const author = authors.find((author) =&gt; author.last_name === post.author)
+      if(author) {
+        resolve(author);
+      } else {
+        reject(Error("Author not found"));
+      }
+    });
+  };
+
+  getPostById(2)
+    .then(post =&gt; { return incorporateAuthorInfo(post) })
+    .then(post =&gt; { console.log(post) })
+    .catch(err =&gt; { console.log(err) })
+</pre>
 
 
-
+<div id="ES6-LESSONS from es6.io by Wes Bos-37 - Working with multiple Promises"><h5 id="37 - Working with multiple Promises">37 - Working with multiple Promises</h5></div>
+<pre class="javascript">
+Promise.all([promiseOne, promiseTwo])
+  .then(responses =&gt; { console.log(responses) })
+</pre>
 
 
 <div id="ES6-LESSONS from es6.io by Wes Bos-filter and reduce"><h5 id="filter and reduce">filter and reduce</h5></div>
