@@ -16,4 +16,5 @@
 	* [[Bash & Terminal]]
 	* [[Git]]
 	* [[SQL]]
+  * [[Vim]]
 	* [[VimWiki]]

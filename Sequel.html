@@ -67,6 +67,45 @@ DB[:users].where(created_at: ((Date.today - 10)..(Date.today)))
 </pre>
 
 <pre class="ruby">
+DB[:users].where { Sequel.~(login: nil, email: nil) }
+# SELECT * FROM `users` WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+
+DB[:users].where { Sequel.&amp;(login: nil, email: nil) }
+# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].exclude { Sequel.&amp;(login: nil, email: nil) }
+# SELECT * FROM `users` WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].exclude { Sequel.~(login: nil, email: nil) }
+# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].where { Sequel.~(Sequel.&amp;(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].where { Sequel.~(Sequel.~(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].where { Sequel.&amp;(Sequel.~(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+
+DB[:users].where { Sequel.&amp;(Sequel.&amp;(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].exclude { Sequel.~(Sequel.&amp;(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].exclude { Sequel.~(Sequel.~(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+
+DB[:users].exclude { Sequel.&amp;(Sequel.&amp;(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
+
+DB[:users].exclude { Sequel.&amp;(Sequel.~(login: nil, email: nil)) }
+# SELECT * FROM `users` WHERE NOT ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+</pre>
+
+
+<pre class="ruby">
 # REGEX
 DB[:users].where(login: /Admin/i)
 </pre>

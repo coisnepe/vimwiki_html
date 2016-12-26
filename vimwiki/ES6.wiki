@@ -28,7 +28,6 @@
   - [[#33 - Object Literal Upgrades|33 - Object Literal Upgrades]]
   - [[#34 - Promises|34 - Promises]]
   - [[#35 - Building your own Promises|35 - Building your own Promises]]
-  - [[#36 - Chaining Promises + Flow control|36 - Chaining Promises + Flow control]]
   - [[#filter and reduce|filter and reduce]]
 
 <br/>
@@ -338,69 +337,19 @@ You can populate an object with variables without specifying their key names
 
 ===== 35 - Building your own Promises =====
 {{{class="javascript"
-// Throw an Error object rather than a plain message.
   const p = new Promise((resolve, reject) => {
     setTimeout(() => {
       reject(Error("This error is wrapped in an error Object"));
     }, 1000);
   });
   p.then("Hey").catch((error) => console.log(error));
-
-  const op = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve("It worked");
-    }, 1000)
-  });
 }}}
 
 <br/>
 
-===== 36 - Chaining Promises + Flow control =====
-{{{class="javascript"
-  const posts = [
-    { id: 1, author: "Hemingway" },
-    { id: 2, author: "Whitman" }
-  ];
-
-  const authors = [
-    { id: 1, origin: "US", first_name: "Ernest", last_name: "Hemingway" },
-    { id: 2, origin: "US", first_name: "Walt", last_name: "Whitman" }
-  ];
-
-  function getPostById(id) {
-    return new Promise((resolve, reject) => {
-      const post = posts.find((post) => post.id == id);
-      if(post) {
-        resolve(post);
-      } else {
-        reject(Error("Post not found"));
-      }
-    });
-  };
-
-  function incorporateAuthorInfo(post){
-    return new Promise((resolve, reject) => {
-      const author = authors.find((author) => author.last_name === post.author)
-      if(author) {
-        resolve(author);
-      } else {
-        reject(Error("Author not found"));
-      }
-    });
-  };
-
-  getPostById(2)
-    .then(post => { return incorporateAuthorInfo(post) })
-    .then(post => { console.log(post) })
-    .catch(err => { console.log(err) })
-}}}
 
 
-===== 37 - Working with multiple Promises =====
-{{{class="javascript"
-Promise.all([promiseOne, promiseTwo])
-  .then(responses => { console.log(responses) })
-}}}
+
 
 
 ===== filter and reduce =====
