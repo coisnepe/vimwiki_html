@@ -78,8 +78,9 @@ Execute raw SQL on the db
 
 Require a gem that's installed on the system, but not present in the Gemfile
 {{{class="code"
-> gem which awesome_print
+$ gem which awesome_print
  ~> '/usr/local/lib/ruby/gems/1.9.1/gems/awesome_print-1.7.0/lib/awesome_print.rb'
+$ rails console
 > $: << '/usr/local/lib/ruby/gems/1.9.1/gems/awesome_print-1.7.0/lib'
 > require "awesome_print"
 }}}
