@@ -63,6 +63,9 @@
 
 # Select a random value
   %w(one two three).sample
+
+# Sort hashes
+  [{ age: 12, name: "John" }, { age: 21, name: "Betty" }].sort_by { |value_hash| value_hash[:age] }
 </pre>
 
 <p>
@@ -112,17 +115,13 @@ puts Benchmark.measure { "something".capitalize }
 
 iterations = 1_000
 
-Benchmark.bm do |bm|
+Benchmark.bm(iterations) do |bm|
   bm.report "message here" do
-    iterations.times do
-      "something".capitalize
-    end
+    "something".capitalize
   end
 
   bm.report "another convoluted method" do
-    iterations.times do
-      "something"[0].upcase + "something"[1..-1]
-    end
+    "something"[0].upcase + "something"[1..-1]
   end
 end
 </pre>
