@@ -24,26 +24,27 @@ DB[:users].where(created_at: ((Date.today - 10)..(Date.today)))
 # Sequel.~ == NOT
 # Sequel.& == AND
 DB[:users].where { Sequel.~(login: nil, email: nil) }
-# SELECT * FROM `users` WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+# > WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
 
 DB[:users].where { Sequel.&(login: nil, email: nil) }
 DB[:users].exclude { Sequel.~(login: nil, email: nil) }
-# SELECT * FROM `users` WHERE ((`login` IS NULL) AND (`email` IS NULL))
+# > WHERE ((`login` IS NULL) AND (`email` IS NULL))
 
 DB[:users].exclude { Sequel.&(login: nil, email: nil) }
-# SELECT * FROM `users` WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
+# > WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
 
 DB[:users].exclude { Sequel.&(Sequel.~(login: nil, email: nil)) }
-# SELECT * FROM `users` WHERE NOT ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+# > WHERE NOT ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
 
 DB[:users].where { Sequel.&(Sequel.~(login: nil), Sequel.~(email: nil)) }
-# SELECT * FROM `users` WHERE ((`login` IS NOT NULL) AND (`email` IS NOT NULL))
+# > WHERE ((`login` IS NOT NULL) AND (`email` IS NOT NULL))
 }}}
 
 
 {{{class="ruby"
 # REGEX
 DB[:users].where(login: /Admin/i)
+# > WHERE (`login` REGEXP 'Admin')
 }}}
 
 <br />
