@@ -4,7 +4,7 @@
 - [[#pry|pry]]
 
 
-===== pry ====
+===== pry =====
 {{{
 # View the documentation from within a pry session
 $ gem install pry-doc
