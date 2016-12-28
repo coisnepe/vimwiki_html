@@ -28,9 +28,51 @@
         
 <div id="Favorite Gems"><h2 id="Favorite Gems">Favorite Gems</h2></div>
 
-<p>
+<ul>
+<li>
 <a href="http:&#47;&#47;sequel.jeremyevans.net&#47;">Sequel</a>
+
+<li>
+<a href="Favorite Gems.html#pry">pry</a>
+
+</ul>
+
+
+<p>
+===== pry ====
 </p>
+<pre>
+# View the documentation from within a pry session
+$ gem install pry-doc
+&gt; show-doc Array#sort!
+
+# Also inspect your own code
+&gt; def this_cool_method
+*   puts "found me"
+* end
+&gt; show-method this_cool_method
+
+# Search your pry history
+&gt; hist --grep require
+
+# Edit a file from pry
+&gt; edit your_file.rb
+
+# .pryrc --&gt; Pry.config.editor = 'vim'
+
+# Run shell commands
+&gt; .cd
+&gt; .ls
+&gt; .pwd # etc...
+
+# Explore an object (list its methods)
+&gt; ls %w(array methods)
+
+# Assign the preceding result to a variable
+&gt; 1 + 1
+=&gt; 2
+&gt; a = _
+</pre>
 
       </div>
     </div>

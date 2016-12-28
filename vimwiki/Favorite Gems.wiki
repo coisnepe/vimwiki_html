@@ -1,3 +1,39 @@
 == Favorite Gems ==
 
-[[http://sequel.jeremyevans.net/|Sequel]]
+- [[http://sequel.jeremyevans.net/|Sequel]]
+- [[#pry|pry]]
+
+
+===== pry ====
+{{{
+# View the documentation from within a pry session
+$ gem install pry-doc
+> show-doc Array#sort!
+
+# Also inspect your own code
+> def this_cool_method
+*   puts "found me"
+* end
+> show-method this_cool_method
+
+# Search your pry history
+> hist --grep require
+
+# Edit a file from pry
+> edit your_file.rb
+
+# .pryrc --> Pry.config.editor = 'vim'
+
+# Run shell commands
+> .cd
+> .ls
+> .pwd # etc...
+
+# Explore an object (list its methods)
+> ls %w(array methods)
+
+# Assign the preceding result to a variable
+> 1 + 1
+=> 2
+> a = _
+}}}
