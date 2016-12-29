@@ -11,6 +11,7 @@
     - [[Vanilla]]
 		- [[ES6]]
 		- [[ReactJS]]
+      - [[React Router]]
 		- [[VueJS]]
 	* [[SysAdmin]]
 	* [[Bash & Terminal]]

@@ -1,0 +1,12 @@
+== React Router ==
+
+Route a component:
+{{{class="javascript"
+// In a function
+this.context.router.transitionTo(`/somewhere/else`)
+
+// And at the bottom
+FirstComponent.contextTypes = {
+  router: React.PropTypes.object
+}
+}}}
