@@ -28,6 +28,43 @@
         
 <div id="ReactJS"><h2 id="ReactJS">ReactJS</h2></div>
 
+<p>
+Anatomy of a react component:
+</p>
+
+<pre class="javascript">
+import React from 'react';
+
+class FirstComponent extends React.Component {
+  render() {
+    return (
+      &lt;p&gt;Hello&lt;/p&gt;
+    )
+  }
+}
+// 'return' can only return one element! If you need more than one, wrap the elements in a div       
+export default FirstComponent;
+</pre>
+
+<p>
+Comment in jsx: <code>{ /* This comment */ }</code>
+</p>
+
+
+<p>
+To be able to reference <code>this</code> in a component, on form submission, you can do so in an <em>onSubmit</em> function: <code>onSubmit={(e) =&gt; { this.submit(e) }}</code>
+</p>
+
+<p>
+Alternatively, you can use a "constructor" before the component is instantiated:
+</p>
+<pre class="javascript">
+class FirstCompnent extends React.Component {
+  constructor() {
+    super();
+    this.submit = this.submit.bind(this);
+</pre>
+
       </div>
     </div>
   </div>

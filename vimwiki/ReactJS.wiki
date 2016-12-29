@@ -1,1 +1,31 @@
 == ReactJS ==
+
+Anatomy of a react component:
+
+{{{class="javascript"
+import React from 'react';
+
+class FirstComponent extends React.Component {
+  render() {
+    return (
+      <p>Hello</p>
+    )
+  }
+}
+// 'return' can only return one element! If you need more than one, wrap the elements in a div       
+export default FirstComponent;
+}}}
+
+Comment in jsx: `{ /* This comment */ }`
+
+
+To be able to reference `this` in a component, on form submission, you can do so in an _onSubmit_ function: `onSubmit={(e) => { this.submit(e) }}`
+
+Alternatively, you can use a "constructor" before the component is instantiated:
+{{{class="javascript"
+class FirstCompnent extends React.Component {
+  constructor() {
+    super();
+    this.submit = this.submit.bind(this);
+}}}
+
