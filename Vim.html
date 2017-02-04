@@ -28,12 +28,73 @@
         
 <div id="Vim"><h2 id="Vim">Vim</h2></div>
 
+<ul>
+<li>
+<a href="http:&#47;&#47;bullium.com&#47;support&#47;vim.html">Cheatsheet</a>
+
+<li>
+<a href="http:&#47;&#47;vimdoc.sourceforge.net&#47;htmldoc&#47;motion.html">Motions</a>
+
+</ul>
+
+
+<p>
+Index
+</p>
+
+<ul>
+<li>
+<a href="Vim.html#Delete">Delete</a>
+
+</ul>
+
+<p>
+<br />
+</p>
+
 <pre>
-a       # Insert after cursor
 :u      # Undo
-ctrl+u  # Redo
+ctrl+r  # Redo
 
 :e      # Edit
+
+a       # Insert after cursor
+</pre>
+
+<pre>
+# Motions
+e   # End of word
+w   # Beginning of next word
+b   # Beginning of surrent word
+
+k   # Up
+j   # Down
+</pre>
+
+<p>
+<br />
+</p>
+
+<div id="Vim-Delete"><h5 id="Delete">Delete</h5></div>
+
+<p>
+<a href="http:&#47;&#47;alvinalexander.com&#47;linux&#47;vi-vim-delete-line-commands-to-end">tutorial</a>
+</p>
+<pre>
+x     # Delete character under the cursor
+
+dw    # Delete from cursor to end of word
+daw   # Delete entire word under cursor
+5daw  # Delete next 5 words
+
+dd    # Delete 
+5dd   # Delete next 5 lines
+
+d$    # Delete to end of line
+d0    # Delete to beginning of line
+
+:1,.d # Delete to beginning of file
+:.,$d # Delete to end of file
 </pre>
 
       </div>

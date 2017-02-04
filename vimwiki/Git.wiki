@@ -29,3 +29,18 @@ Gather 2 commits into one
 {{{
   git rebase -i HEAD~2
 }}}
+
+<br />
+
+Delete branches
+{{{
+$ git push origin --delete branch_name
+$ git branch -d branch_name
+
+br=branch_name; git branch -D $br; git push origin :$br
+
+# .gitconfig
+[alias]
+  nuke = "!f(){ git branch -D \"$1\"; git push origin --delete \"$1\"; };f"
+$ git nuke branch_name
+}}}

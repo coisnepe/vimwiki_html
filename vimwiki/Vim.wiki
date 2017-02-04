@@ -1,8 +1,52 @@
 == Vim ==
 
+- [[http://bullium.com/support/vim.html|Cheatsheet]]
+- [[http://vimdoc.sourceforge.net/htmldoc/motion.html|Motions]]
+
+
+Index
+
+- [[#Delete|Delete]]
+
+<br />
+
 {{{
 :u      # Undo
-ctrl+u  # Redo
+ctrl+r  # Redo
 
 :e      # Edit
+
+a       # Insert after cursor
+}}}
+
+{{{
+# Motions
+e   # End of word
+w   # Beginning of next word
+b   # Beginning of surrent word
+
+k   # Up
+j   # Down
+}}}
+
+<br />
+
+===== Delete =====
+
+[[http://alvinalexander.com/linux/vi-vim-delete-line-commands-to-end|tutorial]]
+{{{
+x     # Delete character under the cursor
+
+dw    # Delete from cursor to end of word
+daw   # Delete entire word under cursor
+5daw  # Delete next 5 words
+
+dd    # Delete 
+5dd   # Delete next 5 lines
+
+d$    # Delete to end of line
+d0    # Delete to beginning of line
+
+:1,.d # Delete to beginning of file
+:.,$d # Delete to end of file
 }}}

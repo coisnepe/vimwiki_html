@@ -1,8 +1,10 @@
 == Favorite Gems ==
 
-- [[http://sequel.jeremyevans.net/|Sequel]]
+- [[Sequel|Sequel]]
 - [[#pry|pry]]
+- [[https://github.com/JoshCheek/seeing_is_believing|seeing_is_believing]]
 
+<br />
 
 ===== pry =====
 {{{

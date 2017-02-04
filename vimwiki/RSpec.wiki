@@ -20,5 +20,5 @@ Peak at the generators from the console with `Rails.application.config.generator
 [[http://api.rubyonrails.org/classes/Rails/Generators.html|API for Rails generators]]
 
 {{{class="ruby"
-expect(sometime).to be_within(1.second).of(some_other_time)
+expect(some_time).to be_within(1.second).of(some_other_time)
 }}}

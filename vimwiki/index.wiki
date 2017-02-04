@@ -4,9 +4,10 @@
 		- [[Rails]]
 		- [[Favorite Gems]]
 			- [[Sequel]]
-			- Testing
+			- Testing 
 				- [[RSpec]]
 				- [[Factory Girl]]
+        - [[Minitest]]
 	* Javascript
     - [[Vanilla]]
 		- [[ES6]]

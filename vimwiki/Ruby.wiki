@@ -1,6 +1,7 @@
 == Ruby ==
 - [[#Array|Array]]
 - [[#Files&Directories|Files and Directories]]
+- [[#csv|csv]]
 - [[#Goodies|Goodies]]
   - [[#Benchmark|Benchmark]]
 
@@ -21,12 +22,17 @@
 
 # Select a random value
   %w(one two three).sample
+
+# Sort hashes
+  [{ age: 12, name: "John" }, { age: 21, name: "Betty" }].sort_by { |value_hash| value_hash[:age] }
 }}}
 
 <br/>
 
 === Files&Directories ===
+
 Directories
+
 {{{class="ruby"
 Dir.pwd                             # Current directory
 Dir.chdir "take_me_home/directory/" # Change directory
@@ -37,12 +43,26 @@ Dir["/target_directory/*"]          # Array of files' path + name
 
 
 Files
+
 {{{class="ruby"
 File.basename("my_code.rb")
 }}}
 
 <br/>
 
+=== csv ===
+
+Nuclear csv parsing: never see the dreaded `invalid byte sequence` error ever again
+
+{{{class="ruby"
+csv_file = File.read(file)
+               .encode("UTF-8", "binary", invalid: :replace, undef: :replace, replace: "")
+CSV.parse(csv_file, col_sep: ";", force_quotes: true, encoding: "utf-8")
+}}}
+
+
+
+<br />
 ==== Goodies ====
 
 {{{class="ruby"
@@ -60,17 +80,13 @@ puts Benchmark.measure { "something".capitalize }
 
 iterations = 1_000
 
-Benchmark.bm do |bm|
+Benchmark.bm(iterations) do |bm|
   bm.report "message here" do
-    iterations.times do
-      "something".capitalize
-    end
+    "something".capitalize
   end
 
   bm.report "another convoluted method" do
-    iterations.times do
-      "something"[0].upcase + "something"[1..-1]
-    end
+    "something"[0].upcase + "something"[1..-1]
   end
 end
 }}}

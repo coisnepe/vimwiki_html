@@ -2,7 +2,7 @@
 
 <head>
   <link rel="Stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css" />
-  <title>RSpec</title>
+  <title>Minitest</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/styles/default.min.css" />
@@ -26,39 +26,35 @@
     <div class="row">
       <div class="col-md-12">
         
-<div id="RSpec"><h2 id="RSpec">RSpec</h2></div>
+<div id="Minitest"><h2 id="Minitest">Minitest</h2></div>
 
 <p>
-<br />
+<a href="https:&#47;&#47;github.com&#47;seattlerb&#47;minitest">Github</a>
 </p>
 
-<p>
-Generators may still not be configured after having run <code>rails g rspec:install</code> (project generated with the <code>-T</code> flag?)
-</p>
-
-<p>
-To activate them:
-</p>
 <pre class="ruby">
-# Put in a config/initializers file
-config.generators do |g|
-  g.test_framework :rspec, fixture: true, views: false
-  g.integration_tool :rspec, fixture: true, views: false
-  g.fixture_replacement :factory_girl, dir: 'spec/factories'
+require "minitest/autorun"
+
+def my_method
+  "this method"
 end
-</pre>
 
-<p>
-<br />
-</p>
+describe my_method do
+  before do
+    @something = "something"
+  end
+  
+  after do
+    puts "Done"
+  end
+  
+  it "works" do
+    my_method.must_equal "this method"
+  end
+end
 
-<p>
-Peak at the generators from the console with <code>Rails.application.config.generators</code>
-<a href="http:&#47;&#47;api.rubyonrails.org&#47;classes&#47;Rails&#47;Generators.html">API for Rails generators</a>
-</p>
 
-<pre class="ruby">
-expect(some_time).to be_within(1.second).of(some_other_time)
+# $ ruby -Ilib:test file_to_test.rb
 </pre>
 
       </div>

@@ -1,1 +1,43 @@
 == SQL ==
+
+- [[#Functions|Functions]]
+
+Comments:
+{{{
+SELECT name; # Comment
+SELECT name, /* inline comment */, population
+/*
+Multiple lines
+comment
+*/
+}}}
+
+<br />
+
+{{{class='sql'
+# XOR : exclusive OR == one condition or the other but not both
+SELECT name, population, area
+FROM world
+WHERE area > 3000000
+XOR population > 250000000
+
+ORDER BY column_name ASC, other_column DESC
+}}}
+
+
+<br />
+
+=== Functions ===
+
+{{{class='sql'
+ROUND(number/1.5, 2) // Round the result of an operation to two decimals
+
+# CASE
+# Conditionally alter values
+SELECT name,
+       CASE WHEN continent='Oceania' THEN 'Australasia'
+            ELSE continent
+            END
+FROM world
+WHERE name LIKE 'N%'
+}}}

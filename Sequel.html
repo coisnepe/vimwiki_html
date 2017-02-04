@@ -70,27 +70,27 @@ DB[:users].where(created_at: ((Date.today - 10)..(Date.today)))
 # Sequel.~ == NOT
 # Sequel.&amp; == AND
 DB[:users].where { Sequel.~(login: nil, email: nil) }
-# &gt; WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+# WHERE ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
 
 DB[:users].where { Sequel.&amp;(login: nil, email: nil) }
 DB[:users].exclude { Sequel.~(login: nil, email: nil) }
-# &gt; WHERE ((`login` IS NULL) AND (`email` IS NULL))
+# WHERE ((`login` IS NULL) AND (`email` IS NULL))
 
 DB[:users].exclude { Sequel.&amp;(login: nil, email: nil) }
-# &gt; WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
+# WHERE NOT ((`login` IS NULL) AND (`email` IS NULL))
 
 DB[:users].exclude { Sequel.&amp;(Sequel.~(login: nil, email: nil)) }
-# &gt; WHERE NOT ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
+# WHERE NOT ((`login` IS NOT NULL) OR (`email` IS NOT NULL))
 
 DB[:users].where { Sequel.&amp;(Sequel.~(login: nil), Sequel.~(email: nil)) }
-# &gt; WHERE ((`login` IS NOT NULL) AND (`email` IS NOT NULL))
+# WHERE ((`login` IS NOT NULL) AND (`email` IS NOT NULL))
 </pre>
 
 
 <pre class="ruby">
 # REGEX
 DB[:users].where(login: /Admin/i)
-# &gt; WHERE (`login` REGEXP 'Admin')
+#  WHERE (`login` REGEXP 'Admin')
 </pre>
 
 <p>
@@ -115,6 +115,17 @@ end
 
 DB[:movies].insert(genres: Sequel.pg_array(["Comedy", "Documentary"], :text))
 DB[:movies].insert(actors: Sequel.pg_jsonb({"leading" =&gt; "Chuck Norris"}))
+</pre>
+
+<pre class="ruby">
+# Store files in a PG database
+DB.alter_table :paintings do
+  add_column :painting, File
+end
+
+painting_image = File.open("guernica.png").read
+
+DB[:paintings].insert(painting: Sequel.blob(painting_image))
 </pre>
 
       </div>

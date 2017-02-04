@@ -35,6 +35,9 @@
 <a href="Ruby.html#Files&amp;Directories">Files and Directories</a>
 
 <li>
+<a href="Ruby.html#csv">csv</a>
+
+<li>
 <a href="Ruby.html#Goodies">Goodies</a>
 
 <ul>
@@ -73,9 +76,11 @@
 </p>
 
 <div id="Ruby-Files&amp;Directories"><h3 id="Files&amp;Directories">Files&amp;Directories</h3></div>
+
 <p>
 Directories
 </p>
+
 <pre class="ruby">
 Dir.pwd                             # Current directory
 Dir.chdir "take_me_home/directory/" # Change directory
@@ -88,6 +93,7 @@ Dir["/target_directory/*"]          # Array of files' path + name
 <p>
 Files
 </p>
+
 <pre class="ruby">
 File.basename("my_code.rb")
 </pre>
@@ -96,7 +102,24 @@ File.basename("my_code.rb")
 <br/>
 </p>
 
-<div id="Ruby-Files&amp;Directories-Goodies"><h4 id="Goodies">Goodies</h4></div>
+<div id="Ruby-csv"><h3 id="csv">csv</h3></div>
+
+<p>
+Nuclear csv parsing: never see the dreaded <code>invalid byte sequence</code> error ever again
+</p>
+
+<pre class="ruby">
+csv_file = File.read(file)
+               .encode("UTF-8", "binary", invalid: :replace, undef: :replace, replace: "")
+CSV.parse(csv_file, col_sep: ";", force_quotes: true, encoding: "utf-8")
+</pre>
+
+
+
+<p>
+<br />
+</p>
+<div id="Ruby-csv-Goodies"><h4 id="Goodies">Goodies</h4></div>
 
 <pre class="ruby">
 # Execute unix commands using backticks `. Returns a string
@@ -107,7 +130,7 @@ File.basename("my_code.rb")
 <br/>
 </p>
 
-<div id="Ruby-Files&amp;Directories-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
+<div id="Ruby-csv-Goodies-Benchmark"><h5 id="Benchmark">Benchmark</h5></div>
 <pre class="ruby">
 require "benchmark"
 

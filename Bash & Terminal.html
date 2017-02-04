@@ -51,6 +51,9 @@
 <a href="Bash & Terminal.html#shred">Shred</a>
 
 <li>
+<a href="Bash & Terminal.html#sed">sed</a>
+
+<li>
 <a href="Bash & Terminal.html#Snippets">Snippets</a>
 
 </ul>
@@ -111,6 +114,9 @@ Search one file
 </p>
 <pre>
 $ grep "redmine" /etc/hosts
+
+// Search filetypes
+$ grep -rn "flagged" --include=*.{rb,} .
 </pre>
 
 <p>
@@ -136,14 +142,21 @@ Flags
 <div id="Bash &amp; Terminal commands-find"><h3 id="find">find</h3></div>
 <pre>
 find
-  -name "*.js"  # Find js files
-  -type f       # Files
-  -maxdepth X   # Go down at most X levels (1 == current directory only)
+  -name "*.js"             # Find js files
+  -wholename "controller"  # Look through the entire filename, not just extension
+  -regex                   # Search with regex pattern
+  -type f                  # Files
+  -maxdepth X              # Go down at most X levels (1 == current directory only)
   -not
-    -path       # Exclude path
+    -path                  # Exclude path
+  -delete                  # Delete the files found
 
 # Find all .js files in the app directory minus [[app/assets/.]]
 $ find app/. -name "*.js" -type f -not -path "*/assets/*"
+
+# Find files with a specific pattern and exclude hidden files
+# 'find' matches the entire path, so append '.*/' to the search
+$ find . -maxdepth 1 -wholename ".*/application*.js" -not -name ".*"
 </pre>
 
 <p>
@@ -182,6 +195,28 @@ $ df -h
 <br/>
 </p>
 
+<div id="Bash &amp; Terminal commands-sed"><h3 id="sed">sed</h3></div>
+
+<p>
+Delete in situ lines containing a given string
+</p>
+
+<pre>
+$ sed -i "/words_in_line/d" ./file_path.log
+</pre>
+
+<p>
+<a href="http:&#47;&#47;unix.stackexchange.com&#47;questions&#47;112023&#47;how-can-i-replace-a-string-in-a-files">Replace strings</a>
+</p>
+
+<pre>
+$ sed -i -- 's/https/http/g' file_path.txt
+</pre>
+
+<p>
+<br />
+</p>
+
 <div id="Bash &amp; Terminal commands-shred"><h3 id="shred">shred</h3></div>
 <p>
 Safely delete files : rm on steroids! It overwrites the file content
@@ -203,6 +238,8 @@ $ shred -uvzn 3 /Documents/file_to_nuke.txt
 
 <div id="Bash &amp; Terminal commands-Snippets"><h3 id="Snippets">Snippets</h3></div>
 <pre>
+
+###########################################
 # == Count the number of lines for  files in a given directory and display the sorted result ==
 #
 # 1: Find ruby files in the current directory
@@ -211,11 +248,17 @@ $ shred -uvzn 3 /Documents/file_to_nuke.txt
 # 4: Omit the "total" line
 # 5: Only display the top 10 results
 $ find . -name "*.rb" -type f | xargs wc -l | sort -rn | grep -v ' total$' | head -10
+###########################################
 
+
+###########################################
 # 1: Find all files in a directory
 # 2: Nuke!
 $ find directory_path/ -depth -type f -exec shred -uvzn 2 {} \;
+###########################################
 
+
+###########################################
 # == Copy a command output to the clipboard
 # Linux
 $ sudo apt-get install xclip
@@ -223,6 +266,14 @@ $ cat my_file.txt | xclip -selection clipboard
 
 # OSX: pbcopy and pbpaste
 $ cat ~/.ssh/id_rsa.pub | pbcopy
+###########################################
+
+
+###########################################
+# == grep filetypes
+$ grep -rn "string" --include=*.{rb,} ./
+$ find . -type f -name "*.rb" | xargs grep -n "string" 
+###########################################
 </pre>
 
 <p>

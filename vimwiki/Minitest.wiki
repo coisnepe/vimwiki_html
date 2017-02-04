@@ -1,0 +1,28 @@
+== Minitest ==
+
+[[https://github.com/seattlerb/minitest|Github]]
+
+{{{class="ruby"
+require "minitest/autorun"
+
+def my_method
+  "this method"
+end
+
+describe my_method do
+  before do
+    @something = "something"
+  end
+  
+  after do
+    puts "Done"
+  end
+  
+  it "works" do
+    my_method.must_equal "this method"
+  end
+end
+
+
+# $ ruby -Ilib:test file_to_test.rb
+}}}
