@@ -38,6 +38,9 @@
 <li>
 <a href="OSX.html#rbenv">rbenv</a>
 
+<li>
+<a href="OSX.html#bundler">bundler</a>
+
 </ul>
 
 <p>
@@ -87,6 +90,27 @@ $ rbenv update
 
 # List available Rubies
 $ rbenv install -l
+</pre>
+
+<div id="Commands-bundler"><h3 id="bundler">bundler</h3></div>
+<pre>
+# Uninstall all gems
+$ for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
+
+# List
+$ gem list [--no-versions]
+
+# Update all gems
+$ gem update
+</pre>
+
+
+<p>
+To easily reinstall gems when moving from one Ruby to another:
+</p>
+<pre>
+$ echo "source \"https://rubygems.org\"" &gt; Gemfile
+$ for i in `gem list --no-versions`; do echo "gem '$i'" &gt;&gt; Gemfile; done
 </pre>
 
       </div>
