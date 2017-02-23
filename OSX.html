@@ -47,73 +47,47 @@
 <div id="Commands"><h2 id="Commands">Commands</h2></div>
 
 <div id="Commands-npm"><h3 id="npm">npm</h3></div>
-<p>
-{{
-</p>
-<ol>
-<li>
-Show outdated packages
-
-</ol>
-<p>
+<pre>
+# Show outdated packages
 $ npm outdated -g --depth=0.
 $ npm update -g
 $ npm install -g outdated_package
-}}
-</p>
+</pre>
 
 <p>
 <br />
 </p>
 
 <div id="Commands-homebrew"><h3 id="homebrew">homebrew</h3></div>
-<p>
-{{
+<pre>
 $ brew update
 $ brew upgrade
 $ brew list --versions
-$ brew services <a href="start.html">stop|restart</a> postgresql
-}}
-</p>
+$ brew services [[start|stop|restart]] postgresql
+</pre>
 
 <p>
 In case a package is problematic/non-functional, switch back to another version:
-{{
+</p>
+<pre>
 $ brew info postgresql
 $ brew switch postgresql 9.5.3
-}}
-</p>
+</pre>
 
 <p>
 <br />
 </p>
 
 <div id="Commands-rbenv"><h3 id="rbenv">rbenv</h3></div>
-<p>
-{{
-</p>
-<ol>
-<li>
-List locally installed Rubies
-
-</ol>
-<p>
+<pre>
+# List locally installed Rubies
 $ rbenv known
-</p>
 
-<p>
 $ rbenv update
-</p>
 
-<ol>
-<li>
-List available Rubies
-
-</ol>
-<p>
+# List available Rubies
 $ rbenv install -l
-}}
-</p>
+</pre>
 
       </div>
     </div>
