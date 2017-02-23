@@ -1,0 +1,46 @@
+== OSX ==
+
+* [[#npm|npm]]
+* [[#homebrew|Homebrew]]
+* [[#rbenv|rbenv]]
+
+<br />
+
+== Commands ==
+
+=== npm ===
+{{
+# Show outdated packages
+$ npm outdated -g --depth=0.
+$ npm update -g
+$ npm install -g outdated_package
+}}
+
+<br />
+
+=== homebrew ===
+{{
+$ brew update
+$ brew upgrade
+$ brew list --versions
+$ brew services [[start|stop|restart]] postgresql
+}}
+
+In case a package is problematic/non-functional, switch back to another version:
+{{
+$ brew info postgresql
+$ brew switch postgresql 9.5.3
+}}
+
+<br />
+
+=== rbenv ===
+{{
+# List locally installed Rubies
+$ rbenv known
+
+$ rbenv update
+
+# List available Rubies
+$ rbenv install -l
+}}
