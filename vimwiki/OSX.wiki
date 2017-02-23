@@ -3,6 +3,7 @@
 * [[#npm|npm]]
 * [[#homebrew|Homebrew]]
 * [[#rbenv|rbenv]]
+* [[#bundler|bundler]]
 
 <br />
 
@@ -43,4 +44,23 @@ $ rbenv update
 
 # List available Rubies
 $ rbenv install -l
+}}}
+
+=== bundler ===
+{{{
+# Uninstall all gems
+$ for i in `gem list --no-versions`; do gem uninstall -aIx $i; done
+
+# List
+$ gem list [--no-versions]
+
+# Update all gems
+$ gem update
+}}}
+
+
+To easily reinstall gems when moving from one Ruby to another:
+{{{
+$ echo "source \"https://rubygems.org\"" > Gemfile
+$ for i in `gem list --no-versions`; do echo "gem '$i'" >> Gemfile; done
 }}}
