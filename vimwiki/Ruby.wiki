@@ -1,5 +1,6 @@
 == Ruby ==
 - [[#Array|Array]]
+- [[#Enumerator|Enumerator]]
 - [[#Files&Directories|Files and Directories]]
 - [[#csv|csv]]
 - [[#Goodies|Goodies]]
@@ -29,7 +30,15 @@
 
 <br/>
 
-=== Files&Directories ===
+==== Enumerator ====
+{{{class="ruby"
+(1..4).each_with_object([]) { |item, ob| ob << item * 10 }
+> [10, 20, 30, 40]
+}}}
+
+<br />
+
+==== Files&Directories ====
 
 Directories
 
