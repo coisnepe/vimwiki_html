@@ -33,7 +33,10 @@
 ==== Enumerator ====
 {{{class="ruby"
 (1..4).each_with_object([]) { |item, ob| ob << item * 10 }
-> [10, 20, 30, 40]
+=> [10, 20, 30, 40]
+
+> (1..4).each_with_object({}) { |i, ob| ob[i] = i * 10 }
+=> {1=>10, 2=>20, 3=>30, 4=>40}
 }}}
 
 <br />

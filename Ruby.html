@@ -81,7 +81,10 @@
 <div id="Ruby-Core library-Enumerator"><h4 id="Enumerator">Enumerator</h4></div>
 <pre class="ruby">
 (1..4).each_with_object([]) { |item, ob| ob &lt;&lt; item * 10 }
-&gt; [10, 20, 30, 40]
+=&gt; [10, 20, 30, 40]
+
+&gt; (1..4).each_with_object({}) { |i, ob| ob[i] = i * 10 }
+=&gt; {1=&gt;10, 2=&gt;20, 3=&gt;30, 4=&gt;40}
 </pre>
 
 <p>

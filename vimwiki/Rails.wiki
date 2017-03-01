@@ -2,6 +2,7 @@
 - [[#String|String]]
 - [[#Validations|Validations]]
 - [[#Rake commands|Rake commands]]
+- [[#Various|Various]]
 - [[#Console|Console]]
 
 <br/>
@@ -68,7 +69,12 @@ Boot up the server on 192.168.1.23:3003
 }}}
 
 <br/>
+==== Various ====
+{{{class="ruby"
+Object.const_set(params["class_name"].classify, Class.new(ActiveRecord::Base)
+}}}
 
+<br />
 ==== Console ====
 Execute raw SQL on the db
 {{{class="ruby"
