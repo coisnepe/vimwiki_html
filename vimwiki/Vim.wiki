@@ -29,6 +29,12 @@ k   # Up
 j   # Down
 }}}
 
+
+{{{
+Go to line 28
+28gg
+}}}
+
 <br />
 
 ===== Delete =====
