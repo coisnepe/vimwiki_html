@@ -77,6 +77,16 @@ $ brew info postgresql
 $ brew switch postgresql 9.5.3
 </pre>
 
+
+<pre>
+# (PG::ConnectionBad)
+# Is the server running locally and accepting
+# connections on Unix domain socket "/tmp/.s.PGSQL.5432"?
+$ cat /usr/local/var/postgres/server.log
+$ brew services restart postgresql
+$ brew switch postgresql 9.5.3
+</pre>
+
 <p>
 <br />
 </p>

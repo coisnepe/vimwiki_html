@@ -35,6 +35,9 @@
 <a href="Ruby.html#Enumerator">Enumerator</a>
 
 <li>
+<a href="Ruby.html#Hash">Hash</a>
+
+<li>
 <a href="Ruby.html#Files&amp;Directories">Files and Directories</a>
 
 <li>
@@ -85,6 +88,24 @@
 
 &gt; (1..4).each_with_object({}) { |i, ob| ob[i] = i * 10 }
 =&gt; {1=&gt;10, 2=&gt;20, 3=&gt;30, 4=&gt;40}
+</pre>
+
+<p>
+<br />
+</p>
+
+<div id="Ruby-Core library-Hash"><h4 id="Hash">Hash</h4></div>
+<p>
+Get all keys recursively in a Hash
+</p>
+
+<pre class="ruby">
+def get_all_keys(ha)
+  ha.each_with_object([]) do |(key, value), keys|
+    keys &lt;&lt; key
+    keys.concat(get_all_keys(value)) if value.is_a? Hash
+  end
+end
 </pre>
 
 <p>
