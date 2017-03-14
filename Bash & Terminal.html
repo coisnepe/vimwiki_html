@@ -295,6 +295,17 @@ $ vim +"set nobomb | set fenc=utf8 | x" file_to_encode.txt
 $ LC_CTYPE=C sed 's/ /;/g' infile.txt outfile.csv
 </pre>
 
+<pre>
+# Kill all processes from a given application
+$ ps aux | grep firefox | awk '{print $2}' | xargs kill -9
+</pre>
+
+<pre>
+# Batch rename files
+$ brew install rename
+$ find . -type f -name "*GUIDELINES*" -exec rename 's/GUIDELINES.md/README.md/' \{\} \;
+</pre>
+
       </div>
     </div>
   </div>

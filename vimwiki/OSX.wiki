@@ -27,6 +27,15 @@ $ brew list --versions
 $ brew services [[start|stop|restart]] postgresql
 }}}
 
+Packages:
+- [[http://go2linux.garron.me/traffic-monitor-for-linux/|vnstat]]
+- [[http://go2linux.garron.me/repeat-command-continously-at-regular-interval-linux/|watch]]
+- tree
+- tmux
+- wrk
+- dopewars
+- ffmpeg
+
 In case a package is problematic/non-functional, switch back to another version:
 {{{
 $ brew info postgresql

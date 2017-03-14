@@ -35,6 +35,13 @@ Go to line 28
 28gg
 }}}
 
+
+{{{
+# Move line up (j for down)
+:ddkP
+}}}
+
+
 <br />
 
 ===== Delete =====
@@ -55,4 +62,12 @@ d0    # Delete to beginning of line
 
 :1,.d # Delete to beginning of file
 :.,$d # Delete to end of file
+}}}
+
+
+{{{
+$ vimdiff file_1.txt file_2.txt
+
+# Switch pane
+ <ctrl>+w+w
 }}}

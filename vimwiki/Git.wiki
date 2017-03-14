@@ -25,9 +25,12 @@ Easily switch between branches by "stashing" current changes instead of committi
 <br/>
 
 === previous commits ===
-Gather 2 commits into one
 {{{
-  git rebase -i HEAD~2
+// Gather 2 commits into one
+$ git rebase -i HEAD~2
+  
+// Undo the previous commit
+$ git reset HEAD~ 
 }}}
 
 <br />

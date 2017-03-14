@@ -202,3 +202,14 @@ $ vim +"set nobomb | set fenc=utf8 | x" file_to_encode.txt
 # Substitute tabs with semi-colons. On OSX, \t doesn't work. ctrl-v then hit tab
 $ LC_CTYPE=C sed 's/ /;/g' infile.txt outfile.csv
 }}}
+
+{{{
+# Kill all processes from a given application
+$ ps aux | grep firefox | awk '{print $2}' | xargs kill -9
+}}}
+
+{{{
+# Batch rename files
+$ brew install rename
+$ find . -type f -name "*GUIDELINES*" -exec rename 's/GUIDELINES.md/README.md/' \{\} \;
+}}}
