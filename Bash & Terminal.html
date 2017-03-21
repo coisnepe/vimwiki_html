@@ -306,6 +306,11 @@ $ brew install rename
 $ find . -type f -name "*GUIDELINES*" -exec rename 's/GUIDELINES.md/README.md/' \{\} \;
 </pre>
 
+<pre>
+# Port already in use?
+$ lsof -i :3000 | awk '{print $2}' | grep -v PID | xargs kill -9
+</pre>
+
       </div>
     </div>
   </div>

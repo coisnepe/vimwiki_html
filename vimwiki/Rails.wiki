@@ -17,6 +17,7 @@
 
 ==== Validations ====
 {{{class="ruby"
+# Check an AR object's validations: User.first._validators
 # Presence
 validates :name, presence: true
 validates :name, :login, :email, presence: true

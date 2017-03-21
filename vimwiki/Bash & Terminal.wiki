@@ -213,3 +213,8 @@ $ ps aux | grep firefox | awk '{print $2}' | xargs kill -9
 $ brew install rename
 $ find . -type f -name "*GUIDELINES*" -exec rename 's/GUIDELINES.md/README.md/' \{\} \;
 }}}
+
+{{{
+# Port already in use?
+$ lsof -i :3000 | awk '{print $2}' | grep -v PID | xargs kill -9
+}}}
