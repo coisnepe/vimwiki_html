@@ -1,0 +1,29 @@
+=== Postgres ===
+
+==== psql commands ====
+
+Command line
+
+{{{
+$ psql
+  -c    # Execute a command
+  -l    # List databases
+  -h    # Host
+  -d    # Database name
+  -U    # Username
+  -W    # Password
+}}}
+
+<br />
+
+Console
+
+{{{
+> \?    # Help
+> \l    # List databases
+> \c    # Connect to a database
+> \dt   # List tables
+> \du   # List roles
+> \d    # List tables, views, sequences (\dS+)
+> \d Name   # Describe table, views, sequences (\dS+)
+}}}
