@@ -15,6 +15,10 @@
       - [[React Router]]
 		- [[VueJS]]
   * [[Databases]]
+    - SQL
+      - [[Postgres]]
+    - NoSQL
+      - [[MongoDB]]
 	* [[SysAdmin]]
 	* [[Bash & Terminal]]
 	* [[Git]]

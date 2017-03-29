@@ -28,6 +28,15 @@
         
 <div id="Postgres"><h3 id="Postgres">Postgres</h3></div>
 
+<ul>
+<li>
+<a href="Postgres.html#psql commands">psql</a>
+
+<li>
+<a href="Postgres.html#sample queries">Sample queries</a>
+
+</ul>
+
 <div id="Postgres-psql commands"><h4 id="psql commands">psql commands</h4></div>
 
 <p>
@@ -60,6 +69,32 @@ Console
 &gt; \du   # List roles
 &gt; \d    # List tables, views, sequences (\dS+)
 &gt; \d Name   # Describe table, views, sequences (\dS+)
+</pre>
+
+<p>
+<br />
+</p>
+
+<div id="Postgres-Sample queries"><h4 id="Sample queries">Sample queries</h4></div>
+
+<p>
+Find the closest representations in time, from now
+</p>
+<pre class="sql">
+SELECT representations.id, events.id as event_id,
+       now(),
+       representations.start_date_time,
+       (start_date_time - now()) as time_diff
+FROM representations
+JOIN events ON representations.event_id = events.id
+WHERE events.is_display IS true
+ORDER BY
+  abs(
+    extract(
+      epoch FROM
+        (start_date_time - now())))
+LIMIT 10;
+}}
 </pre>
 
       </div>

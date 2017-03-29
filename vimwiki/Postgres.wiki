@@ -1,5 +1,8 @@
 === Postgres ===
 
+- [[#psql commands|psql]]
+- [[#sample queries|Sample queries]]
+
 ==== psql commands ====
 
 Command line
@@ -27,3 +30,24 @@ Console
 > \d    # List tables, views, sequences (\dS+)
 > \d Name   # Describe table, views, sequences (\dS+)
 }}}
+
+<br />
+
+==== Sample queries ====
+
+Find the closest representations in time, from now
+{{{class="sql"
+SELECT representations.id, events.id as event_id,
+       now(),
+       representations.start_date_time,
+       (start_date_time - now()) as time_diff
+FROM representations
+JOIN events ON representations.event_id = events.id
+WHERE events.is_display IS true
+ORDER BY
+  abs(
+    extract(
+      epoch FROM
+        (start_date_time - now())))
+LIMIT 10;
+}}
