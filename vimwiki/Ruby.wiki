@@ -6,7 +6,7 @@
 - [[#csv|csv]]
 - [[#Goodies|Goodies]]
   - [[#Benchmark|Benchmark]]
-
+- [[#random|Random]]
 <br/>
 
 === Core library ===
@@ -116,4 +116,17 @@ Benchmark.bm(iterations) do |bm|
     "something"[0].upcase + "something"[1..-1]
   end
 end
+}}}
+
+<br />
+
+==== Random ====
+
+Syntax highlighting of other languages from within ruby code
+
+{{{class="ruby"
+sql_query = <<-SQL
+              SELECT * FROM users
+              WHERE is_awesome IS true
+            SQL
 }}}
