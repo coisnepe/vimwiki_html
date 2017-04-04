@@ -69,6 +69,11 @@ Boot up the server on 192.168.1.23:3003
   rails s -p 3003 -b 192.168.1.23
 }}}
 
+"Address already in use - bind(2) for "::1" port 3000"
+{{{
+ps aux | grep "tcp://localhost:3000" | grep -v grep | awk '{print $2}' | xargs kill -9
+}}}
+
 <br/>
 ==== Various ====
 {{{class="ruby"

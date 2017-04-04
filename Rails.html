@@ -118,6 +118,13 @@ Boot up the server on 192.168.1.23:3003
 </pre>
 
 <p>
+"Address already in use - bind(2) for "::1" port 3000"
+</p>
+<pre>
+ps aux | grep "tcp://localhost:3000" | grep -v grep | awk '{print $2}' | xargs kill -9
+</pre>
+
+<p>
 <br/>
 </p>
 <div id="Ruby on Rails-Various"><h4 id="Various">Various</h4></div>
