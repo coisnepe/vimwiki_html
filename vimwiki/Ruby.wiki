@@ -13,16 +13,16 @@
 
 ==== Array ====
 {{{class="ruby"
-# reject values
+# reject elements. Returns the array without the rejected elements.
   ["", "1", "2"].reject(&:empty?)
 
-# Select values
+# Select elements. Returns an array.
   [10, 2, 1].select { |value| value >= 1 }
 
-# Check values against condition
+# Check elements against a condition. Returns a boolean.
   [132, 12, 0.5].any? { |value| value > 1 }
 
-# Select a random value
+# Select a random element
   %w(one two three).sample
 
 # Sort hashes
