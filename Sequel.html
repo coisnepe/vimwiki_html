@@ -86,6 +86,36 @@ DB[:users].where { Sequel.&amp;(Sequel.~(login: nil), Sequel.~(email: nil)) }
 # WHERE ((`login` IS NOT NULL) AND (`email` IS NOT NULL))
 </pre>
 
+<p>
+<br />
+</p>
+
+<p>
+Name select
+</p>
+<pre class="ruby">
+DB[:zipcodes]
+  .join(:zones, id: :zone_id)
+  .join(:countries, id: Sequel[:zipcodes][:country_id])
+  .where(:zones__name  =&gt; /namur/)
+  .select(:zipcodes__name___zipcode_name,
+          :zones__name___zone_name,
+          :countries__name___country_name)
+
+# SELECT "zipcodes"."name"  AS "zipcode_name",
+#       "zones"."name"     AS "zone_name",
+#       "countries"."name" AS "country_name"
+# FROM   "zipcodes"
+#       INNER JOIN "zones"
+#               ON ( "zones"."id" = "zipcodes"."zone_id" )
+#       INNER JOIN "countries"
+#               ON ( "countries"."id" = "zipcodes"."country_id" )
+# WHERE  ( "zones"."name" ~ 'namur' )
+</pre>
+
+<p>
+<br />
+</p>
 
 <pre class="ruby">
 # REGEX
