@@ -53,8 +53,8 @@ DB[:zipcodes]
           :countries__name___country_name)
 
 # SELECT "zipcodes"."name"  AS "zipcode_name",
-#       "zones"."name"     AS "zone_name",
-#       "countries"."name" AS "country_name"
+#        "zones"."name"     AS "zone_name",
+#        "countries"."name" AS "country_name"
 # FROM   "zipcodes"
 #       INNER JOIN "zones"
 #               ON ( "zones"."id" = "zipcodes"."zone_id" )
