@@ -52,7 +52,7 @@
 
 </ul>
 <li>
-<a href="Ruby.html#random">Random</a>
+<a href="Ruby.html#Random">Random</a>
 
 </ul>
 <p>
@@ -77,6 +77,9 @@
 
 # Sort hashes
   [{ age: 12, name: "John" }, { age: 21, name: "Betty" }].sort_by { |value_hash| value_hash[:age] }
+  
+# Count the number of occurences
+  %w(one two three one one).count("one") # &gt; 3
 </pre>
 
 <p>
@@ -203,6 +206,14 @@ sql_query = &lt;&lt;-SQL
               SELECT * FROM users
               WHERE is_awesome IS true
             SQL
+</pre>
+
+<p>
+URI Library
+</p>
+
+<pre class="ruby">
+URI.parse("http://www.github.com")
 </pre>
 
       </div>

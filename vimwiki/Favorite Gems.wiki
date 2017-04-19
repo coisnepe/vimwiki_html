@@ -38,4 +38,7 @@ $ gem install pry-doc
 > 1 + 1
 => 2
 > a = _
+
+# Show available commands
+> Pry.commands
 }}}

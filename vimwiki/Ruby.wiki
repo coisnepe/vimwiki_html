@@ -6,7 +6,7 @@
 - [[#csv|csv]]
 - [[#Goodies|Goodies]]
   - [[#Benchmark|Benchmark]]
-- [[#random|Random]]
+- [[#Random|Random]]
 <br/>
 
 === Core library ===
@@ -27,6 +27,9 @@
 
 # Sort hashes
   [{ age: 12, name: "John" }, { age: 21, name: "Betty" }].sort_by { |value_hash| value_hash[:age] }
+  
+# Count the number of occurences
+  %w(one two three one one).count("one") # > 3
 }}}
 
 <br/>
@@ -129,4 +132,10 @@ sql_query = <<-SQL
               SELECT * FROM users
               WHERE is_awesome IS true
             SQL
+}}}
+
+URI Library
+
+{{{class="ruby"
+URI.parse("http://www.github.com")
 }}}

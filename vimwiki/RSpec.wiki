@@ -1,5 +1,10 @@
 == RSpec ==
 
+Capybara cheatsheet
+
+https://gist.github.com/tomas-stefano/6652111
+
+
 <br />
 
 Generators may still not be configured after having run `rails g rspec:install` (project generated with the `-T` flag?)
