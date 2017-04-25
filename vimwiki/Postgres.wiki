@@ -1,6 +1,7 @@
 === Postgres ===
 
 - [[#psql commands|psql]]
+- [[#jsonb|jsonb]]
 - [[#sample queries|Sample queries]]
 
 ==== psql commands ====
@@ -29,6 +30,25 @@ Console
 > \du   # List roles
 > \d    # List tables, views, sequences (\dS+)
 > \d Name   # Describe table, views, sequences (\dS+)
+}}}
+
+<br />
+
+==== jsonb ====
+[[http://www.postgresql.org/docs/9.6/interactive/functions-json.html#//apple_ref/cpp/Function/jsonb_object_keys|Official Documentation]]
+
+Search and select keys in jsonb columns
+
+{{{class="sql"
+  SELECT id, foodfacts->'product_name', foodfacts->'brands'
+  FROM products
+  WHERE foodfacts @> '{"id": "12345"}';
+}}}
+
+List all keys of a record's jsonb column
+
+{{{class="sql"
+  SELECT jsonb_object_keys(foodfacts) FROM products;
 }}}
 
 <br />

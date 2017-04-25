@@ -33,6 +33,9 @@
 <a href="Postgres.html#psql commands">psql</a>
 
 <li>
+<a href="Postgres.html#jsonb">jsonb</a>
+
+<li>
 <a href="Postgres.html#sample queries">Sample queries</a>
 
 </ul>
@@ -69,6 +72,33 @@ Console
 &gt; \du   # List roles
 &gt; \d    # List tables, views, sequences (\dS+)
 &gt; \d Name   # Describe table, views, sequences (\dS+)
+</pre>
+
+<p>
+<br />
+</p>
+
+<div id="Postgres-jsonb"><h4 id="jsonb">jsonb</h4></div>
+<p>
+<a href="http:&#47;&#47;www.postgresql.org&#47;docs&#47;9.6&#47;interactive&#47;functions-json.html#&#47;&#47;apple_ref&#47;cpp&#47;Function&#47;jsonb_object_keys">Official Documentation</a>
+</p>
+
+<p>
+Search and select keys in jsonb columns
+</p>
+
+<pre class="sql">
+  SELECT id, foodfacts-&gt;'product_name', foodfacts-&gt;'brands'
+  FROM products
+  WHERE foodfacts @&gt; '{"id": "12345"}';
+</pre>
+
+<p>
+List all keys of a record's jsonb column
+</p>
+
+<pre class="sql">
+  SELECT jsonb_object_keys(foodfacts) FROM products;
 </pre>
 
 <p>
