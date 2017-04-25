@@ -51,6 +51,12 @@ List all keys of a record's jsonb column
   SELECT jsonb_object_keys(foodfacts) FROM products;
 }}}
 
+Display jsonb column as a table
+
+{{{class="sql"
+  SELECT * FROM json_each((
+    SELECT foodfacts::json from products
+  ));
 <br />
 
 ==== Sample queries ====

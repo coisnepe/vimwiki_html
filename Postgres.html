@@ -102,15 +102,19 @@ List all keys of a record's jsonb column
 </pre>
 
 <p>
-<br />
+Display jsonb column as a table
 </p>
 
-<div id="Postgres-Sample queries"><h4 id="Sample queries">Sample queries</h4></div>
-
-<p>
-Find the closest representations in time, from now
-</p>
 <pre class="sql">
+  SELECT * FROM json_each((
+    SELECT foodfacts::json from products
+  ));
+&lt;br /&gt;
+
+==== Sample queries ====
+
+Find the closest representations in time, from now
+{{{class="sql"
 SELECT representations.id, events.id as event_id,
        now(),
        representations.start_date_time,
