@@ -43,6 +43,7 @@ Search and select keys in jsonb columns
   SELECT id, foodfacts->'product_name', foodfacts->'brands'
   FROM products
   WHERE foodfacts @> '{"id": "12345"}';
+  # WHERE foodfacts->>'id' = '12345';
 }}}
 
 List all keys of a record's jsonb column

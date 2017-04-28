@@ -91,6 +91,7 @@ Search and select keys in jsonb columns
   SELECT id, foodfacts-&gt;'product_name', foodfacts-&gt;'brands'
   FROM products
   WHERE foodfacts @&gt; '{"id": "12345"}';
+  # WHERE foodfacts-&gt;&gt;'id' = '12345';
 </pre>
 
 <p>
