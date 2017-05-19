@@ -18,3 +18,12 @@ window.clearInterval();
  window.scrollTo(0, document.body.scrollHeight);
  window.setTimeout(function, milliseconds);
  }}}
+ 
+{{{class="javascript"
+// .charAt()
+"hello".charAt(0); // => "h"
+
+// .slice()
+"hello".slice(2); // => "llo"
+"hello".slice(-2); // => "lo"
+}}}

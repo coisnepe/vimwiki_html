@@ -30,6 +30,10 @@
   
 # Count the number of occurences
   %w(one two three one one).count("one") # > 3
+
+# Split in smaller arrays. Returns an enumerator
+%w(one two three four five six).each_slice(2)
+# > [["one", "two"], ["three", "four"], ["five", "six"]] 
 }}}
 
 <br/>

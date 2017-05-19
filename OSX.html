@@ -104,6 +104,11 @@ $ brew info postgresql
 $ brew switch postgresql 9.5.3
 </pre>
 
+<pre>
+# Error: Another active Homebrew process is already in progress. 
+# Please wait for it to finish or terminate it to continue.
+$ rm /usr/local/var/homebrew/locks/*
+</pre>
 
 <pre>
 # (PG::ConnectionBad)
