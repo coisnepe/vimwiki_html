@@ -34,6 +34,9 @@
 # Split in smaller arrays. Returns an enumerator
 %w(one two three four five six).each_slice(2)
 # > [["one", "two"], ["three", "four"], ["five", "six"]] 
+
+# Make an array out of something.
+Array.wrap(something)
 }}}
 
 <br/>
@@ -123,6 +126,16 @@ Benchmark.bm(iterations) do |bm|
     "something"[0].upcase + "something"[1..-1]
   end
 end
+
+Benchmark.ips do |x|
+  x.report("any?") { Actor.any? }
+  x.report("limit(1)") { Actor.limit(1).count }
+  x.compare!
+end
+
+# Comparison:
+#  limit(1):     1213.5 i/s
+#      any?:      597.1 i/s - 2.03x  slower
 }}}
 
 <br />

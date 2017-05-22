@@ -35,6 +35,8 @@ Packages:
 - wrk
 - dopewars
 - ffmpeg
+- [[https://osquery.io/|osquery]]
+- [[https://github.com/kshvmdn/fsql|fsql]]
 
 In case a package is problematic/non-functional, switch back to another version:
 {{{
