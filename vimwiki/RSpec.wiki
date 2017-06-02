@@ -4,6 +4,8 @@ Capybara cheatsheet
 
 https://gist.github.com/tomas-stefano/6652111
 
+https://gist.github.com/steveclarke/2353100
+
 
 <br />
 

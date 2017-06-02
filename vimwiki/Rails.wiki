@@ -2,6 +2,7 @@
 - [[#String|String]]
 - [[#Validations|Validations]]
 - [[#Rake commands|Rake commands]]
+- [[#Queries|Queries]]
 - [[#Various|Various]]
 - [[#Console|Console]]
 
@@ -75,6 +76,16 @@ ps aux | grep "tcp://localhost:3000" | grep -v grep | awk '{print $2}' | xargs k
 }}}
 
 <br/>
+
+==== Queries ====
+
+{{{class="ruby"
+User.joins(:customers).where(customer: { age: 40 })
+# User.joins(:customers).where("customer.age = 40")
+}}}
+
+<br />
+
 ==== Various ====
 {{{class="ruby"
 Object.const_set(params["class_name"].classify, Class.new(ActiveRecord::Base)
