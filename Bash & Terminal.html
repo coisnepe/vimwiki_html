@@ -157,6 +157,9 @@ $ find app/. -name "*.js" -type f -not -path "*/assets/*"
 # Find files with a specific pattern and exclude hidden files
 # 'find' matches the entire path, so append '.*/' to the search
 $ find . -maxdepth 1 -wholename ".*/application*.js" -not -name ".*"
+
+# Find files and move htem
+$ find . -maxdepth 1 -type f -name "*.sql" | xargs -I '{}' mv '{}' dumps/
 </pre>
 
 <p>

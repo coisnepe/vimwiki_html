@@ -8,7 +8,7 @@ import React from 'react';
 // import React, { Component } from 'react';
 // class FirstComponent extends Component {
 
-class FirstComponent extends Component {
+class FirstComponent extends React.Component {
   render() {
     return (
       <p>Hello</p>
