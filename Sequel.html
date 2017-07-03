@@ -158,6 +158,15 @@ painting_image = File.open("guernica.png").read
 DB[:paintings].insert(painting: Sequel.blob(painting_image))
 </pre>
 
+<div id="Sequel-Tools"><h3 id="Tools">Tools</h3></div>
+
+<p>
+Copy databases
+</p>
+<pre>
+sequel -C postgres://my_username@localhost/my_pg_db sqlite://my_sqlite_database.sqlite3
+</pre>
+
       </div>
     </div>
   </div>
