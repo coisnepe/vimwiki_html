@@ -48,3 +48,8 @@ br=branch_name; git branch -D $br; git push origin :$br
   nuke = "!f(){ git branch -D \"$1\"; git push origin --delete \"$1\"; };f"
 $ git nuke branch_name
 }}}
+
+Find which branch a commit SHA1 originates from
+{{{
+git log <COMMIT SHA>..HEAD --ancestry-path --merges (--oneline)
+}}}

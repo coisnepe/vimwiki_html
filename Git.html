@@ -89,6 +89,13 @@ br=branch_name; git branch -D $br; git push origin :$br
 $ git nuke branch_name
 </pre>
 
+<p>
+Find which branch a commit SHA1 originates from
+</p>
+<pre>
+git log &lt;COMMIT SHA&gt;..HEAD --ancestry-path --merges (--oneline)
+</pre>
+
       </div>
     </div>
   </div>
