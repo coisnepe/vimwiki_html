@@ -221,3 +221,8 @@ $ find . -type f -name "*GUIDELINES*" -exec rename 's/GUIDELINES.md/README.md/' 
 # Port already in use?
 $ lsof -i :3000 | awk '{print $2}' | grep -v PID | xargs kill -9
 }}}
+
+{{{
+# List all available commands
+(echo -n $PATH | tr : '\0' | xargs -0 -n 1 ls; alias | sed 's/alias \([^=]*\)=.*/\1/') | sort -u
+}}
