@@ -30,6 +30,7 @@ Console
 > \du   # List roles
 > \d    # List tables, views, sequences (\dS+)
 > \d Name   # Describe table, views, sequences (\dS+)
+> SET search_path = some_schema # set default schema to query
 }}}
 
 <br />
