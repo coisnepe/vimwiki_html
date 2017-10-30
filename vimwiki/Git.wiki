@@ -53,3 +53,22 @@ Find which branch a commit SHA1 originates from
 {{{
 git log <COMMIT SHA>..HEAD --ancestry-path --merges (--oneline)
 }}}
+
+"cherry pick" a file from another branch
+{{{
+# To run from the branch you want to bring the file to
+$ git checkout branch_where_the_file_is path/to/the/file
+}}}
+
+[Recover a dropped stash](https://stackoverflow.com/questions/89332/how-to-recover-a-dropped-stash-in-git)
+{{{
+$ git stash pop
+[...]
+Dropped refs/stash@{0} (2ca03e22256be97f9e40f08e6d6773c7d41dbfd1)
+
+# (Note that git stash drop also produces the same line.)
+
+# To get that stash back, just run git branch tmp 2cae03e, and you'll get it as a branch. To convert this to a stash, run:
+$ git stash apply tmp
+$ git stash
+}}}

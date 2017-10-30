@@ -318,6 +318,21 @@ $ lsof -i :3000 | awk '{print $2}' | grep -v PID | xargs kill -9
 # List all available commands
 (echo -n $PATH | tr : '\0' | xargs -0 -n 1 ls; alias | sed 's/alias \([^=]*\)=.*/\1/') | sort -u
 }}
+
+{{{
+# Find duplicate files
+$ find app/controllers/ -type f -name "*.rb" -printf '%f\n' | sort | uniq -c | sort -rn
+# find app/controllers/ -type f -name "*.rb" -printf '%f\n'
+#   Find ruby files and only print their name
+# uniq -c
+#   Output unique names and prepend the number of occurences
+# sort -rn
+#   Sort them in reverse order
+</pre>
+
+<pre>
+# Sort folders by size
+$ du -cskh * | sort -rh
 </pre>
 
       </div>
