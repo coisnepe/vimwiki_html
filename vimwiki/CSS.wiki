@@ -1,0 +1,18 @@
+== CSS ==
+
+=== SCSS ===
+
+[[https://gist.github.com/jareware/4738651]]
+
+{{{class='scss'
+// Placeholder selectors
+%base-style {
+  color: red
+  font-size: 1rem
+}
+
+.user-name {
+  @extend %base-style;
+  font-weight: bold;
+}
+}}}

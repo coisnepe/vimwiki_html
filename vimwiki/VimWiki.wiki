@@ -1,4 +1,4 @@
-== Vimwiki Help==
+== Vimwiki Help ==
 Some basics to get around Vimwiki
 
 <br/>

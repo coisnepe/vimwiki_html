@@ -19,6 +19,9 @@
       - [[Postgres]]
     - NoSQL
       - [[MongoDB]]
+  * Frontend
+    - [[HTML]]
+    - [[CSS]]
 	* [[SysAdmin]]
 	* [[Bash & Terminal]]
 	* [[Git]]
